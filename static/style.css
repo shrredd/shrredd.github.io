@@ -88,33 +88,6 @@ body {
   margin-bottom: 0.7em;
 }
 
-#content .portfolio-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#content .portfolio-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-#content .portfolio-item .company-logo {
-  width: 56px;
-  height: 24px;
-  padding: 2px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background-color: #fff;
-  object-fit: contain;
-  object-position: center left;
-  flex-shrink: 0;
-}
-
-#content .portfolio-item .company-copy {
-  display: inline-block;
-}
-
 img.rounded {
   border-radius: 20%;
 }
