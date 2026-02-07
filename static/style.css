@@ -1,17 +1,33 @@
 body {
+  margin: 0;
   font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
-  font-size: 13px;
+  font-size: 14px;
   background-color: #f2efeb;
+  color: #333;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
 }
 
 /* Menu */
 #menu {
-  float: left;
-  margin-top: 30px;
-  margin-left: 20px;
+  margin-top: 6px;
   text-align: left;
-  width: 100px;
+  width: 120px;
+  flex-shrink: 0;
   font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+}
+
+#menu .title {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 #menu ul {
@@ -25,27 +41,20 @@ body {
   color: #0864c7;
 }
 
-#left {
-  height: 1px;
-  float: left;
-  display: block;
-  min-width: 0;
-  overflow: hidden;
-  width: 100px;
-  margin: 0;
-  padding: 0;
-}
-
 /* Content */
 #content {
-  margin-top: 15px;
-  float: left;
-  width: 500px;
+  flex: 1;
+  min-width: 0;
+  max-width: 640px;
 }
 
 #content h1, #content h2, #content h3 {
   font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
   margin: 0;
+}
+
+#content h3 {
+  margin-top: 1.8em;
 }
 
 #content h2 {
@@ -58,8 +67,11 @@ body {
 }
 
 #content p, #content ul {
-  color: #333;
-  line-height: 18px;
+  line-height: 1.55;
+}
+
+#content ul {
+  padding-left: 1.2em;
 }
 
 #content sup.note {
@@ -89,6 +101,11 @@ body {
 }
 
 img.rounded {
+  display: block;
+  width: 130px;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 16px;
   border-radius: 20%;
 }
 
@@ -107,4 +124,38 @@ sup, sub {
 }
 sub {
   top: 0.4em;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+
+  .page {
+    display: block;
+    padding: 16px 16px 30px;
+  }
+
+  #menu {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
+  #menu ul {
+    display: flex;
+    gap: 14px;
+  }
+
+  #content {
+    max-width: none;
+  }
+
+  #content p, #content ul {
+    line-height: 1.6;
+  }
+
+  #content li {
+    margin-bottom: 0.8em;
+  }
 }
