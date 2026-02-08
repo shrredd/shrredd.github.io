@@ -295,6 +295,33 @@ sub {
   margin-bottom: 0.6em;
 }
 
+/* Fallback image styles for essays in case page-level scoping changes */
+#content .article-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.2em 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+#content .article-img-caption {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: -0.6em;
+  margin-bottom: 1.4em;
+}
+
+#content blockquote .article-img {
+  margin: 0.8em 0;
+}
+
+#content blockquote .article-img-caption {
+  margin-top: -0.4em;
+  margin-bottom: 0.6em;
+}
+
 .essay-page .pyramid {
   margin: 1.8em 0;
   display: flex;
