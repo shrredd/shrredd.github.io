@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ '/static/style.css?v=20260208' | relative_url }}">
+  <meta charset="utf-8">
+  <meta name="author" content="Shravan Reddy">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ page.meta_title | default: page.title | append: ' - Shravan Reddy' | escape }}">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:image" content="{{ site.url }}/static/shravan-headshot-520.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.meta_title | default: page.title | append: ' - Shravan Reddy' | escape }}">
+  <meta name="twitter:description" content="{{ page.twitter_description | default: page.description | escape }}">
+  <meta name="twitter:image" content="{{ site.url }}/static/shravan-headshot-520.jpg">
+  {% include analytics.html %}
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": "Shravan Reddy",
+        "url": "{{ site.url }}/"
+      }{% if page.date_published %},
+      "datePublished": {{ page.date_published | jsonify }}{% endif %},
+      "publisher": {
+        "@type": "Person",
+        "name": "Shravan Reddy"
+      }
+    }
+  </script>
+
+  <title>{{ page.meta_title | default: page.title | append: ' - Shravan Reddy' }}</title>
+</head>
+
+<body class="essay-page">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="page">
+    <header id="menu">
+      <h1 class="title">Shravan Reddy</h1>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content">
+      <div class="article-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+        {% if page.byline %}<p class="byline">{{ page.byline }}</p>{% endif %}
+      </div>
+
+{{ content }}
+
+      <div class="article-footer">
+        <a href="/index.html">&larr; Back to home</a>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

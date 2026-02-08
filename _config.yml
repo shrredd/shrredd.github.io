@@ -1,0 +1,15 @@
+url: "https://shravanreddy.com"
+title: "Shravan Reddy"
+markdown: kramdown
+
+collections:
+  essays:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: essays
+    values:
+      layout: essay
