@@ -24,3 +24,24 @@ Then open `http://localhost:8000`.
 1. Commit changes to `master`.
 2. Push to GitHub.
 3. GitHub Pages will publish automatically for this repository.
+
+## Analytics (Cloudflare Web Analytics)
+
+This site includes Cloudflare Web Analytics on all pages:
+
+- `index.html`
+- `great-product/index.html`
+- `why-launch/index.html`
+
+Setup:
+
+1. In Cloudflare Web Analytics, add `shravanreddy.com`.
+2. Confirm the script snippet in the dashboard. If Cloudflare provides an updated snippet, replace the existing script tag in the three files above with the exact dashboard snippet.
+3. Deploy to GitHub Pages.
+4. Open the site and verify events appear in Cloudflare Web Analytics realtime.
+
+What you'll see:
+
+- Views and visitors over time
+- Top pages and entry pages
+- Referrers, countries, devices, and browsers
