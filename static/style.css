@@ -62,7 +62,7 @@ body {
 
 #menu li a:hover,
 #menu li a:focus-visible {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Content */
@@ -135,13 +135,11 @@ img.rounded {
 
 a {
   color: #0b4ea2;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 a:focus-visible {
