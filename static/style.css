@@ -186,9 +186,8 @@ sub {
 }
 
 .essay-page #content .article-header .byline {
-  font-size: 0.9em;
-  color: #777;
-  margin: 0;
+  font-size: 10px;
+  color: #aaa;
 }
 
 .essay-page #content .lede {
@@ -240,7 +239,7 @@ sub {
 }
 
 .essay-page #content blockquote .source a {
-  color: inherit;
+  color: #888;
 }
 
 .essay-page #content ol {
@@ -261,12 +260,12 @@ sub {
   margin-top: 3em;
   padding-top: 1em;
   border-top: 1px solid #ddd;
-  font-size: 0.9em;
+  font-size: smaller;
   color: #777;
 }
 
 .essay-page #content .article-footer a {
-  color: inherit;
+  color: #777;
 }
 
 .essay-page #content .article-img {
