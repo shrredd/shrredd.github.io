@@ -5,76 +5,56 @@ byline: "Shravan Reddy"
 description: "The difference between a prototype and a great product is a mile wide. Here's a framework for thinking about what to work on at each stage."
 twitter_description: "The difference between a prototype and a great product is a mile wide."
 ---
-<p class="lede">
-  The difference between a basic prototype and a great product is a mile wide and just as deep.
-</p>
+The difference between a basic prototype and a great product is a mile wide and just as deep.
+{: .lede}
 
-<p>
-  Prototypes are cheap and easy to throw up very quickly. When you first start a new project,
-  it's largely driven by the initial momentum of doing something brand new, that's never been
-  done before. Since nothing has been built yet, it's freeing to have the ability to work on so
-  many new distinct areas of the product. The progress feels rapid simply because you have no
-  users. If your homepage doesn't render in Internet Explorer, who cares?! No one's using the
-  site yet. If a button click fails randomly once every 100 times, it doesn't matter! There's
-  no one to complain about it yet.
-</p>
+Prototypes are cheap and easy to throw up very quickly. When you first start a new project, it's
+largely driven by the initial momentum of doing something brand new, that's never been done before.
+Since nothing has been built yet, it's freeing to have the ability to work on so many new distinct
+areas of the product. The progress feels rapid simply because you have no users. If your homepage
+doesn't render in Internet Explorer, who cares?! No one's using the site yet. If a button click
+fails randomly once every 100 times, it doesn't matter! There's no one to complain about it yet.
 
-<p>
-  That feeling of pure, unadulterated joy in creating a product is unmatched. Our brains are
-  great at perceiving relative change. There's an instant dopamine reaction the second that
-  first user signs up. "OMG, we're building something that someone actually wants to use!"
-  Simply put, this is why starting new products, or a brand new codebase feels so gratifying.
-  It's a dramatic break from our typical mundane routine.
-</p>
+That feeling of pure, unadulterated joy in creating a product is unmatched. Our brains are great
+at perceiving relative change. There's an instant dopamine reaction the second that first user
+signs up. "OMG, we're building something that someone actually wants to use!" Simply put, this is
+why starting new products, or a brand new codebase feels so gratifying. It's a dramatic break from
+our typical mundane routine.
 
-<p>
-  Conversely, our brains are exceptionally poor at sustaining that high if the relative change
-  or acceleration of progress doesn't continue. The same dopamine hit that we first received
-  simply by having a single user sign up, quickly wears off. We now need ten people to sign up
-  to elicit the exact same reaction. Then a hundred people. Then a thousand.
-</p>
+Conversely, our brains are exceptionally poor at sustaining that high if the relative change or
+acceleration of progress doesn't continue. The same dopamine hit that we first received simply by
+having a single user sign up, quickly wears off. We now need ten people to sign up to elicit the
+exact same reaction. Then a hundred people. Then a thousand.
 
-<p>
-  Change in growth is what we can perceive and what feels like measurable progress. Minor
-  changes like tweaking the text copy to make it easier for 0.01% of users to understand the
-  product doesn't feel like true progress.
-</p>
+Change in growth is what we can perceive and what feels like measurable progress. Minor changes
+like tweaking the text copy to make it easier for 0.01% of users to understand the product doesn't
+feel like true progress.
 
-<p>
-  This is why there are so few, truly great products. The creator's brain is wired to chase the
-  same sweeping macro level changes that so dramatically increased early growth when the product
-  was first getting started. Paradoxically, it's the attention to detail &mdash; the minor
-  tweaks, the selection of a red button over a blue one &mdash; that drives marginal growth.
-  Each individual design change on its own feels inconsequential, but it's the collective sum of
-  these changes that make the product more accessible to a broader swath of people. Simply put,
-  this is why it's so difficult to create great product.
-</p>
+This is why there are so few, truly great products. The creator's brain is wired to chase the same
+sweeping macro level changes that so dramatically increased early growth when the product was first
+getting started. Paradoxically, it's the attention to detail &mdash; the minor tweaks, the selection of
+a red button over a blue one &mdash; that drives marginal growth. Each individual design change on its
+own feels inconsequential, but it's the collective sum of these changes that make the product more
+accessible to a broader swath of people. Simply put, this is why it's so difficult to create great
+product.
 
-<p>
-  So how do we fight this instinct? How do we train ourselves to focus on the incremental
-  improvements that compound into something great? We need a framework &mdash; a way to
-  prioritize what matters at each stage of a product's evolution.
-</p>
+So how do we fight this instinct? How do we train ourselves to focus on the incremental
+improvements that compound into something great? We need a framework &mdash; a way to prioritize what
+matters at each stage of a product's evolution.
 
-<h2>Maslow's Hierarchy of Product Design</h2>
+## Maslow's Hierarchy of Product Design
 
-<p>
-  Maslow's hierarchy of needs is a well-known theory in psychology of the key ingredients
-  necessary for a human to survive and thrive. It's often portrayed with the basic requirements
-  for survival at the base of the pyramid &mdash; physiological needs like food, water, and
-  sleep. A bit higher up the chain are personal safety, then slowly proceeding to love and
-  belonging, self-esteem, and finally self-actualization.
-</p>
+Maslow's hierarchy of needs is a well-known theory in psychology of the key ingredients necessary
+for a human to survive and thrive. It's often portrayed with the basic requirements for survival
+at the base of the pyramid &mdash; physiological needs like food, water, and sleep. A bit higher up the
+chain are personal safety, then slowly proceeding to love and belonging, self-esteem, and finally
+self-actualization.
 
-<p>
-  Without any of the base layers, the subsequent higher layers have little impact on
-  contributing to your overall well-being. It's only when the needs of each lower tier have been
-  thoroughly satisfied that addressing the higher tiers has a meaningful impact.
-</p>
+Without any of the base layers, the subsequent higher layers have little impact on contributing to
+your overall well-being. It's only when the needs of each lower tier have been thoroughly satisfied
+that addressing the higher tiers has a meaningful impact.
 
-<p>
-  Analogously, product design should be driven entirely by a hierarchy of user needs.
-</p>
+Analogously, product design should be driven entirely by a hierarchy of user needs.
 
 <div class="pyramid">
   <div class="pyramid-tier tier-aesthetic">
@@ -99,144 +79,102 @@ twitter_description: "The difference between a prototype and a great product is 
   </div>
 </div>
 
-<h2>Useful</h2>
+## Useful
 
-<p>
-  A product being useful is defined very simply. If there is a non-negligible group of people
-  who suffer from a particular problem and your product eliminates that problem, then it's
-  useful. For this very reason, need-finding is the absolute first step in the product design
-  process. If there isn't a pressing need for your product to exist, then it probably shouldn't.
-</p>
+A product being useful is defined very simply. If there is a non-negligible group of people who
+suffer from a particular problem and your product eliminates that problem, then it's useful. For
+this very reason, need-finding is the absolute first step in the product design process. If there
+isn't a pressing need for your product to exist, then it probably shouldn't.
 
-<p>
-  This seems intuitive, but every year there are hordes of companies that are started simply
-  because the technology they've developed is innovative and novel, not because they've created
-  a real-world solution to a problem. Pure technology definitely has its place. But it's within
-  the R&amp;D division of a large company or in a lab at a research university, not as the
-  primary product in a customer-oriented business.
-</p>
+This seems intuitive, but every year there are hordes of companies that are started simply because
+the technology they've developed is innovative and novel, not because they've created a real-world
+solution to a problem. Pure technology definitely has its place. But it's within the R&D division
+of a large company or in a lab at a research university, not as the primary product in a
+customer-oriented business.
 
-<blockquote>
-  <p>
-    Let's say you were in ancient China and decided to investigate the market of people getting
-    wet in the rain. Your very first step would be to survey a number of people who were
-    drenched in the rain and establish that they'd really much rather prefer to be dry when it
-    rains. You've now come across a pressing problem that begs to be solved.
-  </p>
-</blockquote>
+> Let's say you were in ancient China and decided to investigate the market of people getting wet
+> in the rain. Your very first step would be to survey a number of people who were drenched in the
+> rain and establish that they'd really much rather prefer to be dry when it rains. You've now come
+> across a pressing problem that begs to be solved.
 
-<h2>Functional</h2>
+## Functional
 
-<p>
-  Now that we've found a problem that affects a valuable base of potential customers, our goal
-  is to come up with a basic solution that obviates it. The next question is whether the product
-  can actually be used in the way that it's intended.
-</p>
+Now that we've found a problem that affects a valuable base of potential customers, our goal is to
+come up with a basic solution that obviates it. The next question is whether the product can
+actually be used in the way that it's intended.
 
-<blockquote>
-  <p>
-    You've figured out that people are willing to pay for a device that protects them from the
-    rain. Your first attempt at a solution is a simple plank of wood, that people hold over
-    their heads to protect themselves from the rain. It's functional and solves the immediate
-    issue, but has some lingering problems that we'll soon discover.
-  </p>
-</blockquote>
+> You've figured out that people are willing to pay for a device that protects them from the rain.
+> Your first attempt at a solution is a simple plank of wood, that people hold over their heads to
+> protect themselves from the rain. It's functional and solves the immediate issue, but has some
+> lingering problems that we'll soon discover.
 
-<h2>Reliable</h2>
+## Reliable
 
-<p>
-  Does the product work consistently for everyone? Is it error-free and do people feel assured
-  that it will continue to work correctly? This is one of the hardest parts of building a great
-  product. System reliability is a core user requirement for using a service, but admittedly
-  it's the most unsexy part of product development. Every engineer worth their salt knows
-  there's no such thing as "error-free" and there are always issues that could never have been
-  predicted until they actually occur. The goal is to get as close as possible to this ideal
-  state, by building a fault-tolerant, redundant system.
-</p>
+Does the product work consistently for everyone? Is it error-free and do people feel assured that
+it will continue to work correctly? This is one of the hardest parts of building a great product.
+System reliability is a core user requirement for using a service, but admittedly it's the most
+unsexy part of product development. Every engineer worth their salt knows there's no such thing as
+"error-free" and there are always issues that could never have been predicted until they actually
+occur. The goal is to get as close as possible to this ideal state, by building a fault-tolerant,
+redundant system.
 
-<blockquote>
-  <p>
-    It turns out that a flat plank of wood isn't very good at consistently keeping people dry.
-    If two people walk side by side, they get splashed by water droplets ricocheting off the
-    other's plank. You head back to the drawing board and craft a concave curved piece of wood
-    designed to have water droplets fall straight down. You call this innovative device an
-    "umbrella."
-  </p>
-</blockquote>
+> It turns out that a flat plank of wood isn't very good at consistently keeping people dry. If two
+> people walk side by side, they get splashed by water droplets ricocheting off the other's plank.
+> You head back to the drawing board and craft a concave curved piece of wood designed to have water
+> droplets fall straight down. You call this innovative device an "umbrella."
 
-<h2>Intentional</h2>
+## Intentional
 
-<p>
-  Does the product do exactly what I intended in the manner that is most intuitive? Does
-  clicking a button meet my expectations of what that button was supposed to do? Are pages
-  organized correctly? Are actions clearly organized? Does each interaction logically follow
-  from the previous point in the interface?
-</p>
+Does the product do exactly what I intended in the manner that is most intuitive? Does clicking a
+button meet my expectations of what that button was supposed to do? Are pages organized correctly?
+Are actions clearly organized? Does each interaction logically follow from the previous point in
+the interface?
 
-<blockquote>
-  <p>
-    Your poor umbrella customers are still holding this curved piece of wood above their heads.
-    You hear complaints that their arms are getting tired and they can't walk long distances
-    with the umbrella. As an innovative product designer, you decide to add a handle that is
-    vertically fixed to the centerpiece of the wood. You also decide to replace the heavy curved
-    wood with a lightweight mosaic of leaves attached to a rigid bamboo frame. Holding the
-    umbrella now feels much more natural and is suitable for long excursions. Your customers are
-    delighted!
-  </p>
-</blockquote>
+> Your poor umbrella customers are still holding this curved piece of wood above their heads. You
+> hear complaints that their arms are getting tired and they can't walk long distances with the
+> umbrella. As an innovative product designer, you decide to add a handle that is vertically fixed
+> to the centerpiece of the wood. You also decide to replace the heavy curved wood with a
+> lightweight mosaic of leaves attached to a rigid bamboo frame. Holding the umbrella now feels much
+> more natural and is suitable for long excursions. Your customers are delighted!
 
-<h2>Aesthetic</h2>
+## Aesthetic
 
-<p>
-  Does the aesthetic of the product match my internal measure for something well-designed? Is it
-  pleasing to the eye? When the average person thinks of design, most likely it is this layer
-  that they're referring to. As we've seen though, there are four underlying levels that need to
-  be addressed in the evolution of a product before its visual aesthetic makes even the
-  slightest bit of difference to a customer's needs.
-</p>
+Does the aesthetic of the product match my internal measure for something well-designed? Is it
+pleasing to the eye? When the average person thinks of design, most likely it is this layer that
+they're referring to. As we've seen though, there are four underlying levels that need to be
+addressed in the evolution of a product before its visual aesthetic makes even the slightest bit
+of difference to a customer's needs.
 
-<p>
-  This is arguably the level of the hierarchy where your product can best differentiate itself.
-  According to one
-  <a href="http://www.acrwebsite.org/search/view-conference-proceedings.aspx?Id=7868">study</a>,
-  electric shavers that were aesthetically appealing were able to command a 30% premium compared
-  to a similar functionally equivalent shaver. People react instinctively to products based on
-  their appearance. For this reason, visual design executed well can serve to help your product
-  rise above the competition.
-</p>
+This is arguably the level of the hierarchy where your product can best differentiate itself.
+According to [one study](http://www.acrwebsite.org/search/view-conference-proceedings.aspx?Id=7868),
+electric shavers that were aesthetically appealing were able to command a 30% premium compared to
+a similar functionally equivalent shaver. People react instinctively to products based on their
+appearance. For this reason, visual design executed well can serve to help your product rise above
+the competition.
 
-<p>
-  However, visual design is still purely a surface-level judgment. If the product falls over the
-  first time a user attempts to use it, then the aesthetic layer collapses in on itself.
-</p>
+However, visual design is still purely a surface-level judgment. If the product falls over the
+first time a user attempts to use it, then the aesthetic layer collapses in on itself.
 
-<h2>Resisting the instinct</h2>
+## Resisting the instinct
 
-<p>
-  The contrast in the needs of a product's creator and its users should be clear. The product
-  creator's natural instinct is to chase the same initial high she felt at the beginning of the
-  product development process. The easiest way to do this is to simply tack on new features, as
-  each feature feels like measurable progress.
-</p>
+The contrast in the needs of a product's creator and its users should be clear. The product
+creator's natural instinct is to chase the same initial high she felt at the beginning of the
+product development process. The easiest way to do this is to simply tack on new features, as each
+feature feels like measurable progress.
 
-<p>
-  As product creators, we need to resist this instinct and reconcile our own needs with the
-  diametrically opposite needs of our users. Maslow's hierarchy is useful as a framework to
-  understand what parts of the product deserve the most attention at any point in time. For any
-  product, there are a hundred different new features that design and development time could go
-  towards. Great product design is not merely checking off each of these features but limiting
-  our focus to a specific narrow problem that is most worth pursuing and then solving it
-  thoroughly from the bottom upwards.
-</p>
+As product creators, we need to resist this instinct and reconcile our own needs with the
+diametrically opposite needs of our users. Maslow's hierarchy is useful as a framework to
+understand what parts of the product deserve the most attention at any point in time. For any
+product, there are a hundred different new features that design and development time could go
+towards. Great product design is not merely checking off each of these features but limiting our
+focus to a specific narrow problem that is most worth pursuing and then solving it thoroughly from
+the bottom upwards.
 
-<p>
-  Solve each layer completely before discovering and addressing the next most pressing user
-  problem. Great product design takes incredible focus and self-discipline to quiet our natural
-  instinct to chase novelty. The next time you feel the urge to build a shiny new feature, ask
-  yourself: have I truly nailed the fundamentals for the people already using what I've built?
-</p>
+Solve each layer completely before discovering and addressing the next most pressing user problem.
+Great product design takes incredible focus and self-discipline to quiet our natural instinct to
+chase novelty. The next time you feel the urge to build a shiny new feature, ask yourself: have I
+truly nailed the fundamentals for the people already using what I've built?
 
-<p class="closing">
-  Great products are not built by chasing the next dopamine hit. They are built by people
-  who find satisfaction in the unsexy work of getting the basics right.
-</p>
+Great products are not built by chasing the next dopamine hit. They are built by people who find
+satisfaction in the unsexy work of getting the basics right.
+{: .closing}
