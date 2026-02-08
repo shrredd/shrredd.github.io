@@ -1,1 +1,16 @@
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8be3e3bcbf5f498c9df36ab78467c3a4"}'></script><!-- End Cloudflare Web Analytics -->
+{% if site.cloudflare_web_analytics_token %}
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.cloudflare_web_analytics_token }}"}'></script>
+<!-- End Cloudflare Web Analytics -->
+{% endif %}
+
+{% if site.google_analytics_measurement_id %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_measurement_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics_measurement_id }}');
+</script>
+{% endif %}

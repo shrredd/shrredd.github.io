@@ -52,17 +52,21 @@ The filename becomes the route:
 - `_essays/why-launch.md` -> `/why-launch/`
 - `_essays/great-product.md` -> `/great-product/`
 
-## Analytics (Cloudflare Web Analytics)
+## Analytics (Cloudflare + Google Analytics)
 
 Analytics is centralized in `_includes/analytics.html`.
 It is included by both `_layouts/essay.html` and `index.html`.
+Provider IDs are configured in `_config.yml`.
 
 Setup:
 
 1. In Cloudflare Web Analytics, add `shravanreddy.com`.
-2. If Cloudflare provides an updated snippet, replace it once in `_includes/analytics.html`.
-3. Deploy to GitHub Pages.
-4. Open the site and verify events appear in Cloudflare Web Analytics realtime.
+2. In Google Analytics 4, create/select your property and copy the Measurement ID (format `G-XXXXXXXXXX`).
+3. Set `_config.yml` values:
+   - `cloudflare_web_analytics_token`: Cloudflare site token
+   - `google_analytics_measurement_id`: GA4 Measurement ID
+4. Deploy to GitHub Pages.
+5. Verify events in Cloudflare realtime and GA4 Realtime reports.
 
 What you'll see:
 

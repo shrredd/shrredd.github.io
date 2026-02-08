@@ -2,6 +2,10 @@ url: "https://shravanreddy.com"
 title: "Shravan Reddy"
 markdown: kramdown
 
+# Analytics
+cloudflare_web_analytics_token: "8be3e3bcbf5f498c9df36ab78467c3a4"
+google_analytics_measurement_id: "G-PHDH6B8HND"
+
 collections:
   essays:
     output: true
