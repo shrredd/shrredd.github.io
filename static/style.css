@@ -163,6 +163,190 @@ sub {
   top: 0.4em;
 }
 
+/* Essays */
+.essay-page #menu {
+  margin-top: 9px;
+}
+
+.essay-page #content .article-header {
+  margin-bottom: 2em;
+}
+
+.essay-page #content .article-header h1 {
+  font-size: 1.8em;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+.essay-page #content .article-header .subtitle {
+  font-size: 1.05em;
+  color: #666;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.essay-page #content .article-header .byline {
+  font-size: 0.9em;
+  color: #777;
+  margin: 0;
+}
+
+.essay-page #content .lede {
+  font-size: 1.1em;
+  line-height: 1.55;
+}
+
+.essay-page #content h2 {
+  font-size: 1.15em;
+  margin-top: 2.2em;
+  margin-bottom: 0.3em;
+}
+
+.essay-page #content h2 em {
+  font-weight: normal;
+}
+
+.essay-page #content blockquote {
+  margin: 1.4em 0;
+  padding: 0.9em 1.2em;
+  background: #eae7e2;
+  border-radius: 6px;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+
+.essay-page #content blockquote p {
+  margin: 0;
+}
+
+.essay-page #content blockquote p + p {
+  margin-top: 0.8em;
+}
+
+.essay-page #content blockquote ul {
+  margin: 0.6em 0 0;
+  padding-left: 1.2em;
+}
+
+.essay-page #content blockquote li {
+  margin-bottom: 0.3em;
+}
+
+.essay-page #content blockquote .source {
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.85em;
+  color: #888;
+}
+
+.essay-page #content blockquote .source a {
+  color: inherit;
+}
+
+.essay-page #content ol {
+  padding-left: 1.2em;
+  line-height: 1.55;
+}
+
+.essay-page #content ol li {
+  margin-bottom: 0.5em;
+}
+
+.essay-page #content .closing {
+  margin-top: 2em;
+  font-weight: 600;
+}
+
+.essay-page #content .article-footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.essay-page #content .article-footer a {
+  color: inherit;
+}
+
+.essay-page #content .article-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.2em 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.essay-page #content .article-img-caption {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: -0.6em;
+  margin-bottom: 1.4em;
+}
+
+.essay-page #content blockquote .article-img {
+  margin: 0.8em 0;
+}
+
+.essay-page #content blockquote .article-img-caption {
+  margin-top: -0.4em;
+  margin-bottom: 0.6em;
+}
+
+.essay-page .pyramid {
+  margin: 1.8em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.essay-page .pyramid-tier {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.85em;
+  line-height: 1.3;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.essay-page .pyramid-tier strong {
+  display: block;
+  font-size: 1.05em;
+}
+
+.essay-page .pyramid-tier span {
+  opacity: 0.85;
+  font-size: 0.92em;
+}
+
+.essay-page .tier-aesthetic {
+  width: 40%;
+  background: #6b7280;
+}
+
+.essay-page .tier-intentional {
+  width: 55%;
+  background: #7c6f5b;
+}
+
+.essay-page .tier-reliable {
+  width: 70%;
+  background: #8b7355;
+}
+
+.essay-page .tier-functional {
+  width: 85%;
+  background: #a0845a;
+}
+
+.essay-page .tier-useful {
+  width: 100%;
+  background: #b8944c;
+}
+
 @media (max-width: 760px) {
   body {
     font-size: 16px;
@@ -198,5 +382,34 @@ sub {
 
   img.rounded {
     width: 110px;
+  }
+
+  .essay-page #content .article-header h1 {
+    font-size: 1.55em;
+  }
+
+  .essay-page .tier-aesthetic {
+    width: 55%;
+  }
+
+  .essay-page .tier-intentional {
+    width: 67%;
+  }
+
+  .essay-page .tier-reliable {
+    width: 79%;
+  }
+
+  .essay-page .tier-functional {
+    width: 91%;
+  }
+
+  .essay-page .tier-useful {
+    width: 100%;
+  }
+
+  .essay-page .pyramid-tier {
+    font-size: 0.8em;
+    padding: 8px 6px;
   }
 }
