@@ -6,6 +6,13 @@ body {
   color: #333;
 }
 
+body::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #2d3748;
+}
+
 .skip-link {
   position: absolute;
   left: 12px;
@@ -46,7 +53,7 @@ body {
 }
 
 .site-header .site-name:hover {
-  color: #0b4ea2;
+  color: #3d5a80;
 }
 
 .site-header nav a {
@@ -112,17 +119,22 @@ body {
   margin-bottom: 0.7em;
 }
 
+#content > picture {
+  float: left;
+  margin: 0.35em 18px 6px 0;
+}
+
 img.rounded {
   display: block;
-  width: 130px;
+  width: 100px;
   height: auto;
   max-width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   border-radius: 20%;
 }
 
 a {
-  color: #0b4ea2;
+  color: #3d5a80;
   text-decoration: none;
 }
 
@@ -131,7 +143,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid #0b4ea2;
+  outline: 2px solid #3d5a80;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -152,6 +164,7 @@ sub {
 /* ── Homepage sections ── */
 
 .section {
+  clear: both;
   margin-top: 2.5em;
   padding-top: 2em;
   border-top: 1px solid #ddd;
@@ -178,10 +191,15 @@ sub {
   display: block;
   text-decoration: none;
   color: inherit;
+  padding: 0.7em 0.9em;
+  margin: -0.7em -0.9em;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
 }
 
 .essay-card:hover {
   text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.025);
 }
 
 .essay-card .essay-title {
@@ -192,7 +210,7 @@ sub {
 }
 
 .essay-card:hover .essay-title {
-  color: #0b4ea2;
+  color: #3d5a80;
 }
 
 .essay-card .essay-meta {
@@ -468,6 +486,11 @@ sub {
 
   .site-header {
     margin-bottom: 32px;
+  }
+
+  #content > picture {
+    float: none;
+    margin: 0 0 12px;
   }
 
   img.rounded {
