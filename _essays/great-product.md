@@ -4,6 +4,7 @@ subtitle: "Why great products are rare, and a framework for building them"
 byline: "Shravan Reddy"
 description: "The difference between a prototype and a great product is a mile wide. Here's a framework for thinking about what to work on at each stage."
 twitter_description: "The difference between a prototype and a great product is a mile wide."
+og_image: "/static/og-great-product.png"
 ---
 The difference between a basic prototype and a great product is a mile wide and just as deep.
 {: .lede}

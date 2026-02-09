@@ -531,3 +531,161 @@ sub {
     padding: 8px 6px;
   }
 }
+
+/* ── Dark mode ── */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #d4d4d4;
+  }
+
+  body::before {
+    background: #4a6fa5;
+  }
+
+  .site-header .site-name {
+    color: #d4d4d4;
+  }
+
+  .site-header .site-name:hover {
+    color: #7ba3d4;
+  }
+
+  .site-header nav a {
+    color: #777;
+  }
+
+  .site-header nav a:hover {
+    color: #d4d4d4;
+  }
+
+  a {
+    color: #7ba3d4;
+  }
+
+  a:focus-visible {
+    outline-color: #7ba3d4;
+  }
+
+  .section {
+    border-top-color: #333;
+  }
+
+  .section-title {
+    color: #777;
+  }
+
+  .essay-card .essay-title {
+    color: #d4d4d4;
+  }
+
+  .essay-card:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .essay-card:hover .essay-title {
+    color: #7ba3d4;
+  }
+
+  .essay-card .essay-meta {
+    color: #777;
+  }
+
+  .essay-card .essay-desc {
+    color: #999;
+  }
+
+  .portfolio-tag {
+    color: #777;
+  }
+
+  .press-year {
+    color: #777;
+  }
+
+  #content .byline, #content .byline a, #content .note {
+    color: #666;
+  }
+
+  #content .thanks {
+    border-top-color: #333;
+    color: #888;
+  }
+
+  #content .thanks a {
+    color: #888;
+  }
+
+  .skip-link {
+    background: #d4d4d4;
+    color: #1a1a1a;
+  }
+
+  /* Essay page dark mode */
+  .essay-page #content .article-header .subtitle {
+    color: #999;
+  }
+
+  .essay-page #content .article-header .byline {
+    color: #666;
+  }
+
+  .essay-page #content blockquote {
+    background: #242424;
+  }
+
+  .essay-page #content blockquote .source {
+    color: #777;
+  }
+
+  .essay-page #content blockquote .source a {
+    color: #777;
+  }
+
+  .essay-page #content .article-footer {
+    border-top-color: #333;
+    color: #888;
+  }
+
+  .essay-page #content .article-footer a {
+    color: #888;
+  }
+
+  .essay-page #content .article-img {
+    border-color: #333;
+  }
+
+  .essay-page #content .article-img-caption {
+    color: #777;
+  }
+
+  #content .article-img {
+    border-color: #333;
+  }
+
+  #content .article-img-caption {
+    color: #777;
+  }
+
+  /* Pyramid dark mode adjustments */
+  .essay-page .tier-aesthetic {
+    background: #555d66;
+  }
+
+  .essay-page .tier-intentional {
+    background: #6a5f4d;
+  }
+
+  .essay-page .tier-reliable {
+    background: #786348;
+  }
+
+  .essay-page .tier-functional {
+    background: #8a724c;
+  }
+
+  .essay-page .tier-useful {
+    background: #9e8040;
+  }
+}

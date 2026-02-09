@@ -5,6 +5,7 @@ byline: "Shravan Reddy &middot; March 2025"
 description: "Most founders launch too late. Here's why you should launch early and often -- and how to overcome the objections holding you back."
 twitter_description: "Most founders launch too late. Here's why you should launch early and often."
 date_published: "2025-03-06"
+og_image: "/static/og-why-launch.png"
 ---
 Most founders launch too late.
 {: .lede}

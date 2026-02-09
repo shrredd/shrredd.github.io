@@ -5,6 +5,7 @@ byline: "Shravan Reddy &middot; February 2026"
 description: "Takeaways from Scott Aaronson's The First Law of Complexodynamics: why interestingness can rise and fall while entropy still increases."
 twitter_description: "Why interestingness rises and falls even when entropy only goes up."
 date_published: "2026-02-08"
+og_image: "/static/og-the-first-law-of-complexodynamics.png"
 ---
 Ilya Sutskever recommended [30 papers](https://arc.net/folder/D0472A20-9C20-4D3F-B145-D2865C0A9FEE) with a tantalizing promise: "If you really learn all of these, you'll know 90% of what matters today." This essay is my takeaway from Scott Aaronson's [*The First Law of Complexodynamics*](https://scottaaronson.blog/?p=762).
 {: .lede}

@@ -5,6 +5,7 @@ byline: "Shravan Reddy &middot; February 2026"
 description: "Lessons from building Stripe Treasury and banking infrastructure — from winning the Shopify deal to reconciling real dollars across multiple bank partners."
 twitter_description: "Lessons from building Stripe Treasury and banking infrastructure — from winning the Shopify deal to reconciling real dollars across multiple bank partners."
 date_published: "2026-02-08"
+og_image: "/static/og-financial-infrastructure.png"
 ---
 In January 2020, Shopify issued an RFI for a banking product. We were two months behind.
 {: .lede}
