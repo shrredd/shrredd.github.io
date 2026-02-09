@@ -18,7 +18,12 @@ layout: null
     <id>{{ site.url }}{{ essay.url }}</id>
     {% if essay.date_published %}<published>{{ essay.date_published }}T00:00:00-08:00</published>{% endif %}
     <updated>{{ essay.date_published | default: "2025-01-01" }}T00:00:00-08:00</updated>
-    <summary>{{ essay.description | xml_escape }}</summary>
+    <author>
+      <name>Shravan Reddy</name>
+      <uri>{{ site.url }}/</uri>
+    </author>
+    <summary type="html">{{ essay.description | xml_escape }}</summary>
+    <content type="html">{{ essay.content | xml_escape }}</content>
   </entry>
   {% endfor %}
 </feed>
