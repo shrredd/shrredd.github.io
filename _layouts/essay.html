@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="{{ '/static/style.css?v=20260208a' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="{{ '/static/style.css?v=20260209b' | relative_url }}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Shravan Reddy">
@@ -11,6 +14,7 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="icon" type="image/png" sizes="48x48" href="{{ '/static/favicon-48.png?v=20260208b' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png?v=20260208b' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="Shravan Reddy" href="{{ '/feed.xml' | relative_url }}">
 
   <meta property="og:site_name" content="Shravan Reddy">
   <meta property="og:type" content="article">
@@ -50,13 +54,9 @@
 <body class="essay-page">
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="page">
-    <header id="menu">
-      <h1 class="title">Shravan Reddy</h1>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <a href="{{ '/' | relative_url }}" class="site-name">Shravan Reddy</a>
+      <nav aria-label="Primary"><a href="{{ '/' | relative_url }}">Home</a></nav>
     </header>
 
     <main id="content">

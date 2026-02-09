@@ -4,7 +4,10 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="./static/style.css?v=20260208a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="./static/style.css?v=20260209b">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Shravan Reddy">
@@ -13,6 +16,7 @@
   <link rel="canonical" href="https://shravanreddy.com/">
   <link rel="icon" type="image/png" sizes="48x48" href="/static/favicon-48.png?v=20260208b">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=20260208b">
+  <link rel="alternate" type="application/atom+xml" title="Shravan Reddy" href="/feed.xml">
 
   <meta property="og:site_name" content="Shravan Reddy">
   <meta property="og:type" content="website">
@@ -69,13 +73,8 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="page">
-    <header id="menu">
-      <h1 class="title">Shravan Reddy</h1>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <a href="./" class="site-name">Shravan Reddy</a>
     </header>
 
     <main id="content">
@@ -118,86 +117,76 @@
       <a href="https://www.tbp.org/">Tau Beta Pi</a> at age 20. He holds <a href="https://patents.google.com/patent/US10893081B2/en">multiple</a> <a href="https://patents.google.com/patent/US11170345B2/en">patents</a>.
     </p>
 
-    <h3>Essays</h3>
-    <ul>
-      <li><a href="/why-launch/">Why Launch</a>:
-        Why most founders launch too late, and how to overcome the objections holding you back.</li>
-      <li><a href="/great-product/">How to Design Great Product</a>:
-        Why great products are rare, and a framework for building them.</li>
-      <li><a href="/the-first-law-of-complexodynamics/">The First Law of Complexodynamics</a>:
-        Why interesting systems can become more complex before eventually dissolving into randomness.</li>
-      <li><a href="/financial-infrastructure/">Building Financial Infrastructure from Zero</a>:
-        What's different about building products that move real money.</li>
-    </ul>
+    <section class="section">
+      <h3 class="section-title">Essays</h3>
+      <div class="essay-list">
+        <a href="/financial-infrastructure/" class="essay-card">
+          <span class="essay-title">Building Financial Infrastructure from Zero</span>
+          <span class="essay-meta">February 2026</span>
+          <span class="essay-desc">What's different about building products that move real money.</span>
+        </a>
+        <a href="/the-first-law-of-complexodynamics/" class="essay-card">
+          <span class="essay-title">The First Law of Complexodynamics</span>
+          <span class="essay-meta">February 2026</span>
+          <span class="essay-desc">Why interesting systems rise, peak, and fade.</span>
+        </a>
+        <a href="/why-launch/" class="essay-card">
+          <span class="essay-title">Why Launch</span>
+          <span class="essay-meta">March 2025</span>
+          <span class="essay-desc">Why most founders launch too late, and how to overcome the objections holding you back.</span>
+        </a>
+        <a href="/great-product/" class="essay-card">
+          <span class="essay-title">How to Design Great Product</span>
+          <span class="essay-desc">Why great products are rare, and a framework for building them.</span>
+        </a>
+      </div>
+    </section>
 
-    <h3>Portfolio Spotlight (Pre-Seed)</h3>
-    <p class="notop">
-      Shravan currently works with the following companies, all first backed at pre-seed.
-    </p>
-    <ul>
-      <li><a href="https://www.pravah.com/">Pravah</a>:
-        AI grid intelligence for utilities, focused on forecasting demand, modeling constraints, and reducing
-        operational risk.</li>
-      <li><a href="https://www.usepiston.com/">Piston</a>:
-        A cardless payments network connecting commercial fleets and gas stations to reduce fraud and improve fuel
-        transaction economics.</li>
-      <li><a href="https://www.nomadicml.com/">NomadicML</a>:
-        Video AI agents for autonomous video analysis, event detection, and operational intelligence at scale.</li>
-      <li><a href="https://guardowlco.com/">GuardOwl</a>:
-        Security operations software with AI-powered reporting, real-time guard tracking, and automated scheduling.</li>
-      <li><a href="https://www.andera.ai/">Andera</a>:
-        AI-powered SOX control testing automation for internal audit and accounting teams.</li>
-      <li><a href="https://optexity.com/">Optexity</a>:
-        Open-source infrastructure that lets agents automate workflows across web portals that do not offer modern
-        APIs.</li>
-      <li><a href="https://www.shiplight.ai/">Shiplight</a>:
-        Agentic QA testing platform that expands end-to-end coverage with self-healing tests and low maintenance.</li>
-      <li><a href="https://www.getbaton.ai/">Baton</a>:
-        AI automation for product configuration, helping go-to-market teams spin up personalized demos and customer
-        implementations quickly.</li>
-      <li><a href="https://tanagram.ai/">Tanagram</a>:
-        A rules engine for coding agents and code review automation, designed for engineering teams shipping with AI.</li>
-      <li><a href="https://www.bridgehealthequity.com/">BridgeHealth</a>:
-        A health equity platform focused on helping care teams and community health organizations navigate benefits and
-        social care coordination.</li>
-      <li><a href="https://outspeed.com/">Outspeed</a>:
-        Voice infrastructure for AI companions, with APIs for low-latency realtime voice and text-to-speech.</li>
-    </ul>
+    <section class="section">
+      <h3 class="section-title">Portfolio</h3>
+      <p class="notop">Pre-seed investments Shravan currently works with.</p>
+      <ul class="portfolio-grid">
+        <li><a href="https://www.pravah.com/">Pravah</a> <span class="portfolio-tag">Energy AI</span></li>
+        <li><a href="https://www.usepiston.com/">Piston</a> <span class="portfolio-tag">Fleet payments</span></li>
+        <li><a href="https://www.nomadicml.com/">NomadicML</a> <span class="portfolio-tag">Video AI</span></li>
+        <li><a href="https://guardowlco.com/">GuardOwl</a> <span class="portfolio-tag">Security ops</span></li>
+        <li><a href="https://www.andera.ai/">Andera</a> <span class="portfolio-tag">Audit automation</span></li>
+        <li><a href="https://optexity.com/">Optexity</a> <span class="portfolio-tag">Workflow automation</span></li>
+        <li><a href="https://www.shiplight.ai/">Shiplight</a> <span class="portfolio-tag">QA testing</span></li>
+        <li><a href="https://www.getbaton.ai/">Baton</a> <span class="portfolio-tag">Product demos</span></li>
+        <li><a href="https://tanagram.ai/">Tanagram</a> <span class="portfolio-tag">Code review</span></li>
+        <li><a href="https://www.bridgehealthequity.com/">BridgeHealth</a> <span class="portfolio-tag">Health equity</span></li>
+        <li><a href="https://outspeed.com/">Outspeed</a> <span class="portfolio-tag">Voice AI</span></li>
+      </ul>
+    </section>
 
-    <h3>Selected Press</h3>
-    <ul>
-      <li>2020 &mdash; Stratechery: <a
-          href="https://stratechery.com/2020/stripe-platform-of-platforms/">
-          Stripe: Platform of Platforms
-        </a></li>
-      <li>2020 &mdash; TechCrunch: <a
-          href="https://techcrunch.com/2020/12/03/stripe-announces-embedded-business-banking-service-stripe-treasury/">
-          Stripe announces embedded business banking service Stripe Treasury
-        </a></li>
-      <li>2020 &mdash; TechCrunch: <a
-          href="https://techcrunch.com/2020/05/20/shopify-balance/">
-          Shopify announces Shopify Balance, a business bank account for merchants
-        </a></li>
-      <li>2019 &mdash; The Verge: <a
-          href="https://www.theverge.com/2019/6/11/18661673/new-dropbox-desktop-app-google-docs-slack-atlassian">
-          Dropbox is getting a massive overhaul, wants to be the center of your workflow
-        </a></li>
-      <li>2015 &mdash; VentureBeat: <a
-          href="https://venturebeat.com/2015/01/26/dropbox-acquires-pixelapse-a-version-control-and-collaboration-tool-for-designers/">
-          Dropbox acquires Pixelapse, a version-control and collaboration tool for designers
-        </a></li>
-      <li>2013 &mdash; TechCrunch: <a
-          href="https://techcrunch.com/2013/02/13/yc-backed-pixelapse-brings-github-style-sharing-version-control-to-your-design-projects/">
-          YC-backed Pixelapse brings GitHub-style sharing and version control to your design projects
-        </a></li>
-    </ul>
+    <section class="section">
+      <h3 class="section-title">Press</h3>
+      <ul class="press-list">
+        <li><span class="press-year">2020</span> <a
+            href="https://stratechery.com/2020/stripe-platform-of-platforms/">Stripe: Platform of Platforms</a> &mdash; Stratechery</li>
+        <li><span class="press-year">2020</span> <a
+            href="https://techcrunch.com/2020/12/03/stripe-announces-embedded-business-banking-service-stripe-treasury/">Stripe announces Stripe Treasury</a> &mdash; TechCrunch</li>
+        <li><span class="press-year">2020</span> <a
+            href="https://techcrunch.com/2020/05/20/shopify-balance/">Shopify announces Shopify Balance</a> &mdash; TechCrunch</li>
+        <li><span class="press-year">2019</span> <a
+            href="https://www.theverge.com/2019/6/11/18661673/new-dropbox-desktop-app-google-docs-slack-atlassian">Dropbox is getting a massive overhaul</a> &mdash; The Verge</li>
+        <li><span class="press-year">2015</span> <a
+            href="https://venturebeat.com/2015/01/26/dropbox-acquires-pixelapse-a-version-control-and-collaboration-tool-for-designers/">Dropbox acquires Pixelapse</a> &mdash; VentureBeat</li>
+        <li><span class="press-year">2013</span> <a
+            href="https://techcrunch.com/2013/02/13/yc-backed-pixelapse-brings-github-style-sharing-version-control-to-your-design-projects/">YC-backed Pixelapse brings version control to design</a> &mdash; TechCrunch</li>
+      </ul>
+    </section>
 
-    <h3>Contact</h3>
-    <p class="notop">
-      Best way to connect is <a href="https://www.linkedin.com/in/shrredd/">LinkedIn</a>.
-      Also on <a href="https://twitter.com/shravangreddy">X</a> and
-      <a href="https://github.com/shrredd">GitHub</a>.
-    </p>
+    <section class="section">
+      <h3 class="section-title">Contact</h3>
+      <p class="notop">
+        Best way to connect is <a href="https://www.linkedin.com/in/shrredd/">LinkedIn</a>.
+        Also on <a href="https://twitter.com/shravangreddy">X</a> and
+        <a href="https://github.com/shrredd">GitHub</a>.
+      </p>
+    </section>
+
     </main>
   </div>
 </body>

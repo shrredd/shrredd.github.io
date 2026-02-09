@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shravan Reddy</title>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  <author>
+    <name>Shravan Reddy</name>
+  </author>
+  {% for essay in site.essays reversed %}
+  <entry>
+    <title>{{ essay.title | xml_escape }}</title>
+    <link href="{{ site.url }}{{ essay.url }}"/>
+    <id>{{ site.url }}{{ essay.url }}</id>
+    {% if essay.date_published %}<published>{{ essay.date_published }}T00:00:00-08:00</published>{% endif %}
+    <updated>{{ essay.date_published | default: "2025-01-01" }}T00:00:00-08:00</updated>
+    <summary>{{ essay.description | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

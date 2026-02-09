@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
-  font-size: 14px;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
   background-color: #f2efeb;
   color: #333;
 }
@@ -22,58 +22,46 @@ body {
   top: 10px;
 }
 
+/* Layout */
 .page {
-  max-width: 860px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 24px 20px 40px;
+  padding: 40px 24px 60px;
+}
+
+/* Site header */
+.site-header {
   display: flex;
-  align-items: flex-start;
-  gap: 36px;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
 }
 
-/* Menu */
-#menu {
-  margin-top: 6px;
-  text-align: left;
-  width: 120px;
-  flex-shrink: 0;
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
-}
-
-#menu .title {
-  display: block;
-  margin: 0 0 8px;
-  font-size: 1em;
-  line-height: 1.2;
+.site-header .site-name {
+  font-family: "Source Serif 4", "Georgia", serif;
   font-weight: 600;
-}
-
-#menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#menu li a {
-  display: inline-block;
-  color: #0864c7;
+  font-size: 1.05em;
+  color: #333;
   text-decoration: none;
 }
 
-#menu li a:hover,
-#menu li a:focus-visible {
+.site-header .site-name:hover {
+  color: #0b4ea2;
+}
+
+.site-header nav a {
+  font-size: 0.875em;
+  color: #999;
   text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: #333;
 }
 
 /* Content */
-#content {
-  flex: 1;
-  min-width: 0;
-  max-width: 640px;
-}
-
 #content h1, #content h2, #content h3 {
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica;
+  font-family: "Source Serif 4", "Georgia", serif;
   margin: 0;
 }
 
@@ -91,7 +79,7 @@ body {
 }
 
 #content p, #content ul {
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 #content ul {
@@ -161,10 +149,107 @@ sub {
   top: 0.4em;
 }
 
-/* Essays */
-.essay-page #menu {
-  margin-top: 9px;
+/* ── Homepage sections ── */
+
+.section {
+  margin-top: 2.5em;
+  padding-top: 2em;
+  border-top: 1px solid #ddd;
 }
+
+.section-title {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin: 0 0 1em;
+}
+
+/* Essay cards */
+.essay-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+}
+
+.essay-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.essay-card:hover {
+  text-decoration: none;
+}
+
+.essay-card .essay-title {
+  font-family: "Source Serif 4", "Georgia", serif;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.essay-card:hover .essay-title {
+  color: #0b4ea2;
+}
+
+.essay-card .essay-meta {
+  display: block;
+  font-size: 0.8125em;
+  color: #999;
+  margin-top: 2px;
+}
+
+.essay-card .essay-desc {
+  display: block;
+  color: #666;
+  margin-top: 3px;
+  font-size: 0.9375em;
+  line-height: 1.5;
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55em 2em;
+}
+
+.portfolio-grid li {
+  margin-bottom: 0;
+  font-size: 0.9375em;
+  line-height: 1.4;
+}
+
+.portfolio-tag {
+  color: #999;
+  font-size: 0.875em;
+}
+
+/* Press list */
+.press-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em 0 0;
+}
+
+.press-list li {
+  margin-bottom: 0.55em;
+  font-size: 0.9375em;
+  line-height: 1.5;
+}
+
+.press-year {
+  color: #999;
+  font-size: 0.875em;
+}
+
+/* ── Essay pages ── */
 
 .essay-page #content .article-header {
   margin-bottom: 2em;
@@ -177,7 +262,9 @@ sub {
 }
 
 .essay-page #content .article-header .subtitle {
-  font-size: 1.05em;
+  font-family: "Source Serif 4", "Georgia", serif;
+  font-size: 1.1em;
+  font-style: italic;
   color: #666;
   margin: 0 0 8px;
   line-height: 1.4;
@@ -194,7 +281,7 @@ sub {
 }
 
 .essay-page #content h2 {
-  font-size: 1.15em;
+  font-size: 1.25em;
   margin-top: 2.2em;
   margin-bottom: 0.3em;
 }
@@ -292,7 +379,7 @@ sub {
   margin-bottom: 0.6em;
 }
 
-/* Fallback image styles for essays in case page-level scoping changes */
+/* Fallback image styles */
 #content .article-img {
   display: block;
   max-width: 100%;
@@ -319,6 +406,7 @@ sub {
   margin-bottom: 0.6em;
 }
 
+/* Great Product pyramid */
 .essay-page .pyramid {
   margin: 1.8em 0;
   display: flex;
@@ -371,41 +459,24 @@ sub {
   background: #b8944c;
 }
 
+/* ── Mobile ── */
+
 @media (max-width: 760px) {
-  body {
-    font-size: 16px;
-  }
-
   .page {
-    display: block;
-    padding: 16px 16px 30px;
+    padding: 24px 16px 40px;
   }
 
-  #menu {
-    width: auto;
-    margin-top: 0;
-    margin-bottom: 18px;
-  }
-
-  #menu ul {
-    display: flex;
-    gap: 14px;
-  }
-
-  #content {
-    max-width: none;
-  }
-
-  #content p, #content ul {
-    line-height: 1.6;
-  }
-
-  #content li {
-    margin-bottom: 0.8em;
+  .site-header {
+    margin-bottom: 32px;
   }
 
   img.rounded {
     width: 110px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 0.4em;
   }
 
   .essay-page #content .article-header h1 {
