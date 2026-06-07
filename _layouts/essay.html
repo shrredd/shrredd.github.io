@@ -4,8 +4,8 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
-  <link rel="stylesheet" href="{{ '/static/style.css?v=20260209d' | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+  <link rel="stylesheet" href="{{ '/static/style.css?v=20260607a' | relative_url }}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Shravan Reddy">
@@ -88,9 +88,9 @@
 
     <main id="content">
       <div class="article-header">
+        {% if page.byline %}<p class="byline"><img class="byline-avatar" src="{{ '/static/shravan-headshot-260.jpg' | relative_url }}" alt="Shravan Reddy" width="20" height="20" decoding="async">{{ page.byline }}</p>{% endif %}
         <h1>{{ page.title }}</h1>
         {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
-        {% if page.byline %}<p class="byline">{{ page.byline }}</p>{% endif %}
       </div>
 
 {{ content }}

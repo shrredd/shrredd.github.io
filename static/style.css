@@ -1,16 +1,68 @@
+/* ── Design tokens ── */
+:root {
+  /* Fonts — sans for headings/UI, serif for reading prose */
+  --f-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --f-prose: "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Color — light (default) */
+  --c-bg: #fcfcfc;
+  --c-text: #2b2f29;
+  --c-text-muted: #2b2f29a6;       /* ~65% */
+  --c-surface: #f4f4f4;
+  --c-border: #2b2f291f;            /* ~12% */
+  --c-accent: #d19f64;             /* warm tan/gold */
+  --c-highlight: #8b5cf6;          /* purple */
+  --c-selection: #8b5cf61f;        /* purple 12% */
+  --c-quote-bar: #2b2f294d;        /* text @ ~30% */
+  --c-quote-text: #2b2f29bf;       /* text @ ~75% */
+
+  --c-code-text: #1937a2;
+  --c-code-bg: #1937a212;
+  --c-code-bd: #1937a238;
+  --c-codeblock-bg: #f9fafc;
+
+  --c-link-underline: #2b2f2940;   /* text @ ~25% */
+
+  /* Type scale (desktop) */
+  --fs-body: 18px;  --lh-body: 1.7;
+  --fs-h1: 32px;    --lh-h1: 1.3;
+  --fs-h2: 26px;    --lh-h2: 1.35;
+  --fs-h3: 21px;    --lh-h3: 1.4;
+  --fw-heading: 600;
+
+  /* Rhythm / layout */
+  --space-p: 32px;
+  --space-p-h2: 80px;
+  --space-p-h3: 64px;
+  --gutter: 20px;
+  --content-w: 720px;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 8px;
+}
+
 body {
   margin: 0;
-  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--f-body);
   font-size: 15px;
-  background-color: #f2efeb;
-  color: #333;
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--c-selection);
 }
 
 body::before {
   content: '';
   display: block;
   height: 3px;
-  background: #2d3748;
+  background: var(--c-accent);
 }
 
 .skip-link {
@@ -18,10 +70,10 @@ body::before {
   left: 12px;
   top: -44px;
   padding: 8px 10px;
-  background: #111;
-  color: #fff;
+  background: var(--c-text);
+  color: var(--c-bg);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   z-index: 10;
 }
 
@@ -31,9 +83,9 @@ body::before {
 
 /* Layout */
 .page {
-  max-width: 640px;
+  max-width: var(--content-w);
   margin: 0 auto;
-  padding: 40px 24px 60px;
+  padding: 48px 24px 80px;
 }
 
 /* Site header */
@@ -41,7 +93,7 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .site-header h1 {
@@ -50,30 +102,31 @@ body::before {
 }
 
 .site-header .site-name {
-  font-family: "Source Serif 4", "Georgia", serif;
+  font-family: var(--f-body);
   font-weight: 600;
   font-size: 1.05em;
-  color: #333;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
   text-decoration: none;
 }
 
 .site-header .site-name:hover {
-  color: #3d5a80;
+  color: var(--c-accent);
 }
 
 .site-header nav a {
   font-size: 0.875em;
-  color: #999;
+  color: var(--c-text-muted);
   text-decoration: none;
 }
 
 .site-header nav a:hover {
-  color: #333;
+  color: var(--c-text);
 }
 
 /* Content */
-#content h1, #content h2, #content h3 {
-  font-family: "Source Serif 4", "Georgia", serif;
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+  font-family: var(--f-body);
   margin: 0;
 }
 
@@ -86,15 +139,17 @@ body::before {
 }
 
 #content .byline, #content .byline a, #content .note {
-  font-size: 10px;
-  color: #aaa;
+  font-size: 14px;
+  color: var(--c-text-muted);
 }
 
-#content p, #content ul {
+#content p {
+  font-family: var(--f-prose);
   line-height: 1.65;
 }
 
 #content ul {
+  line-height: 1.65;
   padding-left: 1.2em;
 }
 
@@ -110,14 +165,14 @@ body::before {
 #content .thanks {
   margin-top: 2em;
   padding-top: 1em;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--c-border);
   margin-bottom: 4em;
   font-size: smaller;
-  color: #777;
+  color: var(--c-text-muted);
 }
 
 #content .thanks a {
-  color: #777;
+  color: var(--c-text-muted);
 }
 
 #content li {
@@ -139,7 +194,7 @@ img.rounded {
 }
 
 a {
-  color: #3d5a80;
+  color: var(--c-text);
   text-decoration: none;
 }
 
@@ -148,9 +203,21 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid #3d5a80;
+  outline: 2px solid var(--c-accent);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+/* Underlined links inside reading prose (not nav/cards/UI) */
+#content p a, #content li a, #content blockquote a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--c-link-underline);
+}
+
+#content p a:hover, #content li a:hover, #content blockquote a:hover {
+  text-decoration-color: var(--c-text);
 }
 
 .post + .post {
@@ -172,16 +239,16 @@ sub {
   clear: both;
   margin-top: 2.5em;
   padding-top: 2em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--c-border);
 }
 
 .section-title {
-  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--f-body);
   font-size: 0.75em;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #999;
+  color: var(--c-text-muted);
   margin: 0 0 1em;
 }
 
@@ -189,45 +256,47 @@ sub {
 .essay-list {
   display: flex;
   flex-direction: column;
-  gap: 1.4em;
+  gap: 0.2em;
+  margin-top: 0.8em;
 }
 
 .essay-card {
   display: block;
   text-decoration: none;
   color: inherit;
-  padding: 0.7em 0.9em;
-  margin: -0.7em -0.9em;
-  border-radius: 6px;
+  padding: 0.6em 0.9em;
+  margin: 0 -0.9em;
+  border-radius: var(--r-sm);
   transition: background-color 0.15s ease;
 }
 
 .essay-card:hover {
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: var(--c-surface);
 }
 
 .essay-card .essay-title {
-  font-family: "Source Serif 4", "Georgia", serif;
+  font-family: var(--f-body);
   font-weight: 600;
-  color: #333;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
   line-height: 1.3;
 }
 
 .essay-card:hover .essay-title {
-  color: #3d5a80;
+  color: var(--c-accent);
 }
 
 .essay-card .essay-meta {
   display: block;
   font-size: 0.8125em;
-  color: #999;
+  color: var(--c-text-muted);
   margin-top: 2px;
 }
 
 .essay-card .essay-desc {
   display: block;
-  color: #666;
+  color: var(--c-text-muted);
   margin-top: 3px;
   font-size: 0.9375em;
   line-height: 1.5;
@@ -250,7 +319,7 @@ sub {
 }
 
 .portfolio-tag {
-  color: #999;
+  color: var(--c-text-muted);
   font-size: 0.875em;
 }
 
@@ -268,43 +337,69 @@ sub {
 }
 
 .press-year {
-  color: #999;
+  color: var(--c-text-muted);
   font-size: 0.875em;
 }
 
 /* ── Essay pages ── */
 
 .essay-page #content .article-header {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
+}
+
+.essay-page #content .article-header .byline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--c-text-muted);
+  margin: 0 0 16px;
+}
+
+.essay-page #content .article-header .byline-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
 }
 
 .essay-page #content .article-header h1 {
-  font-size: 1.8em;
-  line-height: 1.2;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  font-weight: 700;
+  letter-spacing: -0.022em;
   margin: 0 0 4px;
 }
 
 .essay-page #content .article-header .subtitle {
-  font-family: "Source Serif 4", "Georgia", serif;
-  font-size: 1.1em;
+  font-family: var(--f-prose);
+  font-size: 1.3em;
   font-style: italic;
-  color: #666;
-  margin: 0 0 8px;
+  color: var(--c-text-muted);
+  margin: 6px 0 0;
   line-height: 1.4;
 }
 
-.essay-page #content .article-header .byline {
-  font-size: 10px;
-  color: #aaa;
+.essay-page #content p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.essay-page #content p:not(:last-child) {
+  margin-bottom: var(--space-p);
 }
 
 .essay-page #content .lede {
-  font-size: 1.1em;
-  line-height: 1.55;
+  font-size: 20px;
+  line-height: var(--lh-body);
 }
 
 .essay-page #content h2 {
-  font-size: 1.25em;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  font-weight: var(--fw-heading);
+  letter-spacing: -0.015em;
   margin-top: 2.2em;
   margin-bottom: 0.3em;
 }
@@ -313,16 +408,36 @@ sub {
   font-weight: normal;
 }
 
+.essay-page #content h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-heading);
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+  margin-bottom: 0.3em;
+}
+
+/* Vertical rhythm: extra space before headings that follow a paragraph */
+.essay-page #content p + h2 {
+  margin-top: var(--space-p-h2);
+}
+
+.essay-page #content p + h3 {
+  margin-top: var(--space-p-h3);
+}
+
 .essay-page #content blockquote {
-  margin: 1.4em 0;
-  padding: 0.9em 1.2em;
-  background: #eae7e2;
-  border-radius: 6px;
-  font-size: 0.95em;
-  line-height: 1.55;
+  font-family: var(--f-prose);
+  margin: 32px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--c-quote-bar);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--c-quote-text);
 }
 
 .essay-page #content blockquote p {
+  font-size: inherit;
   margin: 0;
 }
 
@@ -343,20 +458,33 @@ sub {
   display: block;
   margin-top: 0.4em;
   font-size: 0.85em;
-  color: #888;
+  color: var(--c-text-muted);
 }
 
 .essay-page #content blockquote .source a {
-  color: #888;
+  color: var(--c-text-muted);
 }
 
-.essay-page #content ol {
+/* A blockquote used only to frame an image reads better without the bar */
+.essay-page #content blockquote:has(.article-img) {
+  border-left: 0;
+  padding-left: 0;
+  color: var(--c-text);
+}
+
+.essay-page #content ul, .essay-page #content ol {
   padding-left: 1.2em;
-  line-height: 1.55;
 }
 
-.essay-page #content ol li {
+.essay-page #content li {
+  font-family: var(--f-prose);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   margin-bottom: 0.5em;
+}
+
+.essay-page #content li > ul, .essay-page #content li > ol {
+  margin-top: 0.4em;
 }
 
 .essay-page #content .closing {
@@ -367,34 +495,37 @@ sub {
 .essay-page #content .article-footer {
   margin-top: 3em;
   padding-top: 1em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--c-border);
   font-size: smaller;
-  color: #777;
+  color: var(--c-text-muted);
 }
 
 .essay-page #content .article-footer a {
-  color: #777;
+  color: var(--c-text-muted);
 }
 
 .essay-page #content .article-img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.2em 0;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  margin: 1.2em auto;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-border);
 }
 
 .essay-page #content .article-img-caption {
   display: block;
-  font-size: 0.8em;
-  color: #999;
+  font-family: var(--f-body);
+  font-size: 14px;
+  color: var(--c-text-muted);
+  text-align: center;
+  line-height: 1.5;
   margin-top: -0.6em;
   margin-bottom: 1.4em;
 }
 
 .essay-page #content blockquote .article-img {
-  margin: 0.8em 0;
+  margin: 0.8em auto;
 }
 
 .essay-page #content blockquote .article-img-caption {
@@ -402,31 +533,111 @@ sub {
   margin-bottom: 0.6em;
 }
 
-/* Fallback image styles */
+/* Fallback image styles (non-essay-page contexts) */
 #content .article-img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.2em 0;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  margin: 1.2em auto;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-border);
 }
 
 #content .article-img-caption {
   display: block;
-  font-size: 0.8em;
-  color: #999;
+  font-family: var(--f-body);
+  font-size: 14px;
+  color: var(--c-text-muted);
+  text-align: center;
+  line-height: 1.5;
   margin-top: -0.6em;
   margin-bottom: 1.4em;
 }
 
 #content blockquote .article-img {
-  margin: 0.8em 0;
+  margin: 0.8em auto;
 }
 
 #content blockquote .article-img-caption {
   margin-top: -0.4em;
   margin-bottom: 0.6em;
+}
+
+/* ── Additional markdown elements ── */
+.essay-page #content h4 {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: var(--fw-heading);
+  margin-top: 1.8em;
+  margin-bottom: 0.3em;
+}
+
+.essay-page #content h5, .essay-page #content h6 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: var(--fw-heading);
+  margin-top: 1.6em;
+  margin-bottom: 0.3em;
+}
+
+#content code {
+  font-family: var(--f-mono);
+  font-size: 0.85em;
+  color: var(--c-code-text);
+  background: var(--c-code-bg);
+  border: 1px solid var(--c-code-bd);
+  border-radius: var(--r-sm);
+  padding: 1px 5px;
+}
+
+#content pre, #content .highlight {
+  background: var(--c-codeblock-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 16px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+#content pre code, #content .highlight code {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--c-text);
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+#content hr {
+  border: 0;
+  height: 1px;
+  background: var(--c-border);
+  width: 32px;
+  margin: 56px auto;
+}
+
+#content table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--f-body);
+  font-size: 15px;
+  margin: 1.5em 0;
+}
+
+#content th, #content td {
+  border: 1px solid var(--c-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+#content thead th {
+  background: var(--c-surface);
+}
+
+#content figcaption {
+  font-family: var(--f-body);
+  font-size: 14px;
+  color: var(--c-text-muted);
 }
 
 /* Great Product pyramid */
@@ -485,6 +696,15 @@ sub {
 /* ── Mobile ── */
 
 @media (max-width: 760px) {
+  :root {
+    --fs-h1: 26px;
+    --fs-h2: 24px;
+    --fs-h3: 20px;
+    --space-p: 24px;
+    --space-p-h2: 42px;
+    --space-p-h3: 42px;
+  }
+
   .page {
     padding: 24px 16px 40px;
   }
@@ -505,10 +725,6 @@ sub {
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 0.4em;
-  }
-
-  .essay-page #content .article-header h1 {
-    font-size: 1.55em;
   }
 
   .essay-page .tier-aesthetic {
@@ -537,143 +753,28 @@ sub {
   }
 }
 
-/* ── Dark mode ── */
+/* ── Dark mode (system preference) ── */
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1a1a1a;
-    color: #d4d4d4;
+  :root {
+    --c-bg: #181a16;
+    --c-text: #e8eae2;
+    --c-text-muted: #e8eae28c;
+    --c-surface: #20221d;
+    --c-border: #e8eae21a;
+    --c-accent: #f90;
+    --c-highlight: #a78bfa;
+    --c-selection: #a78bfa1f;
+    --c-quote-bar: #e8eae24d;
+    --c-quote-text: #e8eae2bf;
+    --c-code-text: #7e9be5;
+    --c-code-bg: #7e9be51f;
+    --c-code-bd: #7e9be538;
+    --c-codeblock-bg: #1f211c;
+    --c-link-underline: #e8eae240;
   }
 
-  body::before {
-    background: #4a6fa5;
-  }
-
-  .site-header .site-name {
-    color: #d4d4d4;
-  }
-
-  .site-header .site-name:hover {
-    color: #7ba3d4;
-  }
-
-  .site-header nav a {
-    color: #777;
-  }
-
-  .site-header nav a:hover {
-    color: #d4d4d4;
-  }
-
-  a {
-    color: #7ba3d4;
-  }
-
-  a:focus-visible {
-    outline-color: #7ba3d4;
-  }
-
-  .section {
-    border-top-color: #333;
-  }
-
-  .section-title {
-    color: #777;
-  }
-
-  .essay-card .essay-title {
-    color: #d4d4d4;
-  }
-
-  .essay-card:hover {
-    background-color: rgba(255, 255, 255, 0.04);
-  }
-
-  .essay-card:hover .essay-title {
-    color: #7ba3d4;
-  }
-
-  .essay-card .essay-meta {
-    color: #777;
-  }
-
-  .essay-card .essay-desc {
-    color: #999;
-  }
-
-  .portfolio-tag {
-    color: #777;
-  }
-
-  .press-year {
-    color: #777;
-  }
-
-  #content .byline, #content .byline a, #content .note {
-    color: #666;
-  }
-
-  #content .thanks {
-    border-top-color: #333;
-    color: #888;
-  }
-
-  #content .thanks a {
-    color: #888;
-  }
-
-  .skip-link {
-    background: #d4d4d4;
-    color: #1a1a1a;
-  }
-
-  /* Essay page dark mode */
-  .essay-page #content .article-header .subtitle {
-    color: #999;
-  }
-
-  .essay-page #content .article-header .byline {
-    color: #666;
-  }
-
-  .essay-page #content blockquote {
-    background: #242424;
-  }
-
-  .essay-page #content blockquote .source {
-    color: #777;
-  }
-
-  .essay-page #content blockquote .source a {
-    color: #777;
-  }
-
-  .essay-page #content .article-footer {
-    border-top-color: #333;
-    color: #888;
-  }
-
-  .essay-page #content .article-footer a {
-    color: #888;
-  }
-
-  .essay-page #content .article-img {
-    border-color: #333;
-  }
-
-  .essay-page #content .article-img-caption {
-    color: #777;
-  }
-
-  #content .article-img {
-    border-color: #333;
-  }
-
-  #content .article-img-caption {
-    color: #777;
-  }
-
-  /* Pyramid dark mode adjustments */
+  /* Pyramid tier colors (outside the variable system) */
   .essay-page .tier-aesthetic {
     background: #555d66;
   }
