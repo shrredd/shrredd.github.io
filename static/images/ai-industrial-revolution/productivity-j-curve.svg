@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 385" role="img" aria-label="The productivity J-curve: measured productivity dips below the prior trend during early adoption of a general-purpose technology, then rises well above it years later. A marker suggests AI is currently near the crossing point." style="width:100%;height:auto;display:block;font-family:'Hanken Grotesk', Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif;font-variant-numeric:tabular-nums">
+<title>The productivity J-curve</title>
+<path d="M 70 181 C 150 188, 200 260, 300 264 C 380 266, 440 220, 480 180 L 70 180 Z" fill="#fdf3e0"/>
+<path d="M 480 180 C 520 140, 560 95, 640 62 L 640 180 Z" fill="#e7f8ee"/>
+<line x1="70" y1="180" x2="688" y2="180" stroke="#8a93a5" stroke-dasharray="4 5"/>
+<text x="78" y="170" text-anchor="start" style="font-size:12.5px;fill:#79839a">prior trend</text>
+<path d="M 70 181 C 150 188, 200 260, 300 264 C 380 266, 440 220, 480 180 C 520 140, 560 95, 640 62" fill="none" stroke="#1c2a44" stroke-width="3" stroke-linecap="round"/>
+<text x="300" y="298" text-anchor="middle" style="font-size:13.5px;fill:#5c6878;font-weight:600">invisible investment</text>
+<text x="300" y="316" text-anchor="middle" style="font-size:12.5px;fill:#79839a">(process redesign, training, org change)</text>
+<text x="545" y="45" text-anchor="middle" style="font-size:13.5px;fill:#178a43;font-weight:600">visible gains, years later</text>
+<line x1="555" y1="52" x2="572" y2="78" stroke="#8a93a5" stroke-width="1"/>
+<circle cx="480" cy="180" r="7" fill="#2f6fed"/>
+<text x="462" y="156" text-anchor="middle" style="font-size:13.5px;fill:#2f6fed;font-weight:600">AI today?</text>
+<line x1="466" y1="161" x2="477" y2="172" stroke="#2f6fed" stroke-width="1.5"/>
+<line x1="70" y1="340" x2="690" y2="340" stroke="#8a93a5"/>
+<polygon points="696,340 684,334.5 684,345.5" fill="#8a93a5"/>
+<line x1="70" y1="340" x2="70" y2="30" stroke="#8a93a5"/>
+<polygon points="70,24 64.5,36 75.5,36" fill="#8a93a5"/>
+<text x="380" y="368" text-anchor="middle" style="font-size:13px;fill:#79839a">time since the technology arrives</text>
+<text x="42" y="185" text-anchor="middle" transform="rotate(-90 42 185)" style="font-size:13px;fill:#79839a">measured productivity</text>
+</svg>

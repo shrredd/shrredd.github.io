@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 468" role="img" aria-label="Bar chart of years from founding to a one trillion dollar valuation: Microsoft 44, Apple 42, NVIDIA 30, Amazon 24, SpaceX 24 via a private mark in the xAI merger, Alphabet 21, Tesla 18, Meta 17. OpenAI is at about 10 years and 852 billion dollars, Anthropic at 5 years and 965 billion, neither yet at a trillion." style="width:100%;height:auto;display:block;font-family:'Hanken Grotesk', Inter, -apple-system, 'Helvetica Neue', Arial, sans-serif;font-variant-numeric:tabular-nums">
+<title>Years from founding to a $1 trillion valuation</title>
+<line x1="210" y1="24" x2="210" y2="410" stroke="#e8eaee"/>
+<text x="210" y="430" text-anchor="middle" style="font-size:12px;fill:#79839a">0</text>
+<line x1="310" y1="24" x2="310" y2="410" stroke="#e8eaee"/>
+<text x="310" y="430" text-anchor="middle" style="font-size:12px;fill:#79839a">10</text>
+<line x1="410" y1="24" x2="410" y2="410" stroke="#e8eaee"/>
+<text x="410" y="430" text-anchor="middle" style="font-size:12px;fill:#79839a">20</text>
+<line x1="510" y1="24" x2="510" y2="410" stroke="#e8eaee"/>
+<text x="510" y="430" text-anchor="middle" style="font-size:12px;fill:#79839a">30</text>
+<line x1="610" y1="24" x2="610" y2="410" stroke="#e8eaee"/>
+<text x="610" y="430" text-anchor="middle" style="font-size:12px;fill:#79839a">40</text>
+<text x="196" y="45" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Microsoft (1975)</text>
+<rect x="210" y="33" width="440.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="666" y="44.5" text-anchor="start" style="font-size:13px;fill:#5c6878">44 yrs</text>
+<text x="196" y="83" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Apple (1976)</text>
+<rect x="210" y="71" width="420.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="646" y="82.5" text-anchor="start" style="font-size:13px;fill:#5c6878">42</text>
+<text x="196" y="121" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">NVIDIA (1993)</text>
+<rect x="210" y="109" width="300.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="526" y="120.5" text-anchor="start" style="font-size:13px;fill:#5c6878">30</text>
+<text x="196" y="159" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Amazon (1994)</text>
+<rect x="210" y="147" width="240.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="466" y="158.5" text-anchor="start" style="font-size:13px;fill:#5c6878">24</text>
+<text x="196" y="197" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">SpaceX (2002)</text>
+<rect x="210" y="185" width="240.0" height="14" rx="7" fill="#2f6fed"/>
+<text x="466" y="196.5" text-anchor="start" style="font-size:13px;fill:#5c6878">24 yrs &#183; $1T private mark</text>
+<text x="196" y="235" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Alphabet (1998)</text>
+<rect x="210" y="223" width="210.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="436" y="234.5" text-anchor="start" style="font-size:13px;fill:#5c6878">21</text>
+<text x="196" y="273" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Tesla (2003)</text>
+<rect x="210" y="261" width="180.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="406" y="272.5" text-anchor="start" style="font-size:13px;fill:#5c6878">18</text>
+<text x="196" y="311" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Meta (2004)</text>
+<rect x="210" y="299" width="170.0" height="14" rx="7" fill="#8a93a5"/>
+<text x="396" y="310.5" text-anchor="start" style="font-size:13px;fill:#5c6878">17</text>
+<text x="196" y="349" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">OpenAI (2015)</text>
+<rect x="210" y="337" width="100.0" height="14" rx="7" fill="#8b5cf6"/>
+<text x="326" y="348.5" text-anchor="start" style="font-size:13px;fill:#5c6878">~10 yrs &#183; $852B, not there yet</text>
+<text x="196" y="387" text-anchor="end" style="font-size:14.5px;fill:#1c2a44;font-weight:600">Anthropic (2021)</text>
+<rect x="210" y="375" width="50.0" height="14" rx="7" fill="#f5a623"/>
+<text x="276" y="386.5" text-anchor="start" style="font-size:13px;fill:#5c6878">5 yrs &#183; $965B and counting</text>
+<line x1="210" y1="410" x2="668" y2="410" stroke="#e8eaee"/>
+<text x="435" y="454" text-anchor="middle" style="font-size:13px;fill:#79839a">years from founding to a $1 trillion valuation</text>
+</svg>

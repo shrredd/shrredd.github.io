@@ -4,3 +4,8 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
+
+# Private post-topic pipeline — local working files only.
+# Briefs contain confidential provenance (founder/portfolio names, deal figures);
+# this repo is public, so these must never be committed. Finished essays go in _essays/.
+_pipeline/
