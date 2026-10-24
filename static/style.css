@@ -338,24 +338,6 @@ sub {
   vertical-align: 0.1em;
 }
 
-/* Press list */
-.press-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.8em 0 0;
-}
-
-.press-list li {
-  margin-bottom: 0.55em;
-  font-size: 0.9375em;
-  line-height: 1.5;
-}
-
-.press-year {
-  color: var(--c-text-muted);
-  font-size: 0.875em;
-}
-
 /* ── Essay pages ── */
 
 .essay-page #content .article-header {

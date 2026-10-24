@@ -1,0 +1,121 @@
+{%- comment -%}
+  Press shelf. Each entry in _data/press.yml is a book spine on the shelf.
+  Without JavaScript the spines are plain links to the articles. With it,
+  static/press.js opens each one as a small book, built from the templates below.
+{%- endcomment -%}
+<section class="section press" aria-labelledby="press-title">
+  <h2 class="section-title" id="press-title">Press</h2>
+  <p class="notop press-intro">Coverage of Shravan&rsquo;s work at Pear and of the companies and products he helped build. Open a book to read a short summary and see each story as it was first published.</p>
+
+  <div class="shelf" data-shelf>
+    {%- for book in site.data.press %}
+    <a class="shelf-book" href="{{ book.url }}" data-book="{{ book.slug }}" style="--cloth: {{ book.cloth }}; --ink: {{ book.ink }}; --accent: {{ book.accent | default: book.cloth }}; --t: {{ book.thickness }};">
+      <span class="spine">
+        <span class="spine__pub">{{ book.pub_short | default: book.publication }}</span>
+        <span class="spine__title">{{ book.spine }}</span>
+        <span class="spine__year">{{ book.date | date: "%Y" }}</span>
+        <span class="spine__mark" aria-hidden="true">S</span>
+      </span>
+      <span class="shelf-book__top" aria-hidden="true"></span>
+      <span class="shelf-book__bottom" aria-hidden="true"></span>
+    </a>
+    {%- endfor %}
+  </div>
+
+  {%- for book in site.data.press %}
+  {%- assign published = book.date | date: "%B %-d, %Y" %}
+  <template id="press-book-{{ book.slug }}">
+    <div class="rb-info">
+      <p class="rb-info__kicker">{{ book.publication }} &middot; {{ published }}</p>
+      <h2 class="rb-info__title">{{ book.headline }}</h2>
+      <p class="rb-info__byline">{{ book.author }}</p>
+      <hr class="rb-info__rule">
+      <p class="rb-info__blurb">{{ book.blurb }}</p>
+      <ul class="rb-info__links">
+        <li><a href="{{ book.url }}" target="_blank" rel="noopener">Read the article on {{ book.publication }}<span aria-hidden="true">&nearr;</span></a></li>
+        {%- if book.archive %}
+        <li><a href="{{ book.archive }}" target="_blank" rel="noopener">See it as first published<span aria-hidden="true">&nearr;</span></a></li>
+        {%- endif %}
+      </ul>
+      {%- if book.credit %}
+      <p class="rb-info__credit">{{ book.credit }}</p>
+      {%- endif %}
+    </div>
+
+    <div class="rb-back">
+      <p class="back__pub">{{ book.publication }}</p>
+      <p class="back__blurb">{{ book.blurb }}</p>
+      <p class="back__date">{{ published }}</p>
+      <p class="back__mark">S</p>
+    </div>
+
+    <div class="rb-pages">
+      <div class="rb-page rb-page--cover" data-label="Cover">
+        <p class="cover__pub">{{ book.publication }}</p>
+        <div class="cover__art">{% include press-art/{{ book.slug }}.svg %}</div>
+        <h3 class="cover__title">{{ book.spine }}</h3>
+        <p class="cover__author">{{ book.author }}</p>
+        <p class="cover__mark" aria-hidden="true">S</p>
+      </div>
+      <div class="rb-page rb-page--endpaper" aria-hidden="true"></div>
+
+      <div class="rb-page rb-page--title" data-label="Title page">
+        <p class="title__pub">{{ book.publication }}</p>
+        <h3 class="title__headline">{{ book.headline }}</h3>
+        <p class="title__byline">by {{ book.author }}</p>
+        <p class="title__date">{{ published }}</p>
+        <p class="title__imprint">Shravan Reddy &middot; Press</p>
+      </div>
+      <figure class="rb-page rb-page--plate" data-label="Plate">
+        <p class="rb-page__head">Plate</p>
+        <img src="{{ '/static/press/' | append: book.plate | relative_url }}" alt="The top of the article as first published by {{ book.publication }}" width="{{ book.plate_size[0] }}" height="{{ book.plate_size[1] }}" decoding="async">
+        <figcaption>As first published by {{ book.publication }}, {{ published }}.{% if book.archive %} From the Internet Archive.{% endif %}</figcaption>
+      </figure>
+
+      {%- if book.reprint %}
+      {%- for page in book.reprint %}
+      <figure class="rb-page rb-page--reprint" data-label="Article {{ forloop.index }} of {{ forloop.length }}">
+        <p class="rb-page__head">{{ book.publication }}</p>
+        <img src="{{ '/static/press/' | append: page.image | relative_url }}" alt="Page {{ forloop.index }} of {{ forloop.length }} of the article, as printed by {{ book.publication }}" width="{{ page.size[0] }}" height="{{ page.size[1] }}" decoding="async">
+        <figcaption class="rb-page__folio">{{ forloop.index }}</figcaption>
+      </figure>
+      {%- endfor %}
+      {%- else %}
+      <div class="rb-page rb-page--text rb-page--story" data-label="The story">
+        <p class="rb-page__head">{{ book.spine }}</p>
+        <h3 class="text__heading">The story</h3>
+        {{ book.story | markdownify }}
+        <p class="rb-page__folio">1</p>
+      </div>
+      {%- endif %}
+      <div class="rb-page rb-page--text" data-label="Shravan&rsquo;s part">
+        <p class="rb-page__head">{{ book.publication }}</p>
+        <h3 class="text__heading">Shravan&rsquo;s part</h3>
+        {{ book.part | markdownify }}
+        {%- if book.quote %}
+        <blockquote class="text__quote">
+          <p>&ldquo;{{ book.quote }}&rdquo;</p>
+          <footer>Shravan Reddy, to {{ book.publication }}</footer>
+        </blockquote>
+        {%- endif %}
+        <p class="rb-page__folio">{% if book.reprint %}{{ book.reprint.size | plus: 1 }}{% else %}2{% endif %}</p>
+      </div>
+
+      <div class="rb-page rb-page--colophon" data-label="Read the original">
+        <p class="rb-page__head">Colophon</p>
+        <h3 class="text__heading">Read the original</h3>
+        <a class="colophon__link" href="{{ book.url }}" target="_blank" rel="noopener">Continue on {{ book.pub_short | default: book.publication }} <span aria-hidden="true">&nearr;</span></a>
+        {%- if book.credit %}
+        <p class="colophon__note">{{ book.credit }}</p>
+        {%- else %}
+        <p class="colophon__note">The article and its images belong to {{ book.publication }}. This book holds a short summary written for this site and a picture of the page as first published.</p>
+        {%- endif %}
+        <p class="colophon__mark" aria-hidden="true">S</p>
+      </div>
+      <div class="rb-page rb-page--endpaper" aria-hidden="true"></div>
+    </div>
+  </template>
+  {%- endfor %}
+
+  <script src="{{ '/static/press.js?v=20261024d' | relative_url }}" defer></script>
+</section>

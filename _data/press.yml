@@ -1,0 +1,252 @@
+# Press coverage, shown on the homepage as a shelf of small books.
+#
+# Each entry becomes one book: a spine on the shelf and, when opened, a cover,
+# a title page, a plate of the article as first published, two short pages of
+# summary, and a colophon that links to the original.
+#
+# - spine: short title for the spine and cover; headline is the article's own title
+# - pub_short: optional shorter publication name for the spine and the link button
+# - archive: optional Internet Archive copy; without it the plate is a screenshot
+# - plate: image in static/press/, cropped from the archive copy or a screenshot (640px wide)
+# - cloth / ink: cover and type colors; accent defaults to cloth (set it for light covers)
+# - thickness: spine height in px on desktop; longer articles make thicker books
+# - blurb: one or two sentences for the reader's side panel and the back cover
+# - story / part: Markdown, written for this site (keep each under ~110 words)
+# - reprint / credit: only with reprint rights. Page images of the full article
+#   (each about 660px wide) replace the story page; credit is the required notice.
+
+- slug: pear-fund-v
+  publication: The Wall Street Journal
+  pub_short: WSJ
+  author: Yuliya Chernova
+  date: 2026-10-14
+  spine: "Pear’s Fifth Fund"
+  headline: "Pear VC’s Latest Fund Is Smaller and Will Invest Faster"
+  url: https://www.wsj.com/pro/venture-capital/pear-vcs-latest-fund-is-smaller-and-will-invest-faster-86fed400?st=8podLt&reflink=desktopwebshare_permalink
+  plate: pear-fund-v.webp
+  plate_size: [640, 817]
+  reprint:
+    - { image: pear-fund-v-1.webp, size: [660, 733] }
+    - { image: pear-fund-v-2.webp, size: [660, 727] }
+    - { image: pear-fund-v-3.webp, size: [660, 730] }
+  credit: >-
+    Reprinted with permission of The Wall Street Journal. Copyright © 2026
+    Dow Jones & Company, Inc. All rights reserved worldwide.
+  cloth: "#262622"
+  ink: "#eee7d6"
+  thickness: 52
+  blurb: >-
+    WSJ on Pear VC’s smaller, faster fifth fund. The same story reports
+    Shravan’s promotion from partner to general partner.
+  story: |
+    Pear VC raised a $333 million fifth fund, about $100 million less than its
+    2023 fund. Staying small is how it plans to compete with much larger funds.
+
+    It aims to invest the fund in about two and a half years, down from three
+    and a half to four: pre-seed checks of $250,000 to $2 million into about
+    125 companies, and seed checks of $1.5 million to $6 million into about 50.
+    Almost all its pre-seed deals come from PearX, which drew 6,095
+    applications for 16 places in its summer batch.
+  part: |
+    In the same story, WSJ reported that Pear had “promoted Arash Afrakhteh,
+    Ajay Kamat and Shravan Reddy, from partner to general partner.”
+
+    At Pear, Shravan invests at pre-seed in AI, B2B software and fintech
+    companies.
+
+- slug: platform-of-platforms
+  publication: Stratechery
+  author: Ben Thompson
+  date: 2020-12-03
+  spine: "Stripe: Platform of Platforms"
+  headline: "Stripe: Platform of Platforms"
+  url: https://stratechery.com/2020/stripe-platform-of-platforms/
+  archive: https://web.archive.org/web/20201211150133/https://stratechery.com/2020/stripe-platform-of-platforms/
+  plate: platform-of-platforms.webp
+  plate_size: [640, 840]
+  cloth: "#1f2944"
+  ink: "#e6d2a3"
+  thickness: 62
+  blurb: >-
+    Ben Thompson's analysis of the day Stripe Treasury launched, and why it
+    made Stripe a platform for other platforms.
+  story: |
+    When Stripe Treasury launched, Ben Thompson saw more than a new product.
+    Big banks like Goldman Sachs cannot serve millions of small businesses one
+    at a time, and a new business cannot easily open an account with them.
+
+    Treasury puts one API between the two, so any software platform can offer
+    its users a bank account. Thompson compares it to an operating system that
+    lets any app run on any computer. With Shopify Balance built on Treasury,
+    he concludes that Stripe is not just a platform. It is a platform of
+    platforms.
+  part: |
+    Shravan was an engineering leader at Stripe, where he helped grow Treasury
+    from an idea to hundreds of millions of dollars in deposits.
+
+    The essay explains why that work mattered: one integration that connects
+    partner banks to every platform built on Stripe.
+
+- slug: stripe-treasury
+  publication: TechCrunch
+  author: Romain Dillet
+  date: 2020-12-03
+  spine: "Stripe Treasury"
+  headline: "Stripe announces embedded business banking service Stripe Treasury"
+  url: https://techcrunch.com/2020/12/03/stripe-announces-embedded-business-banking-service-stripe-treasury/
+  archive: https://web.archive.org/web/20201205022019/https://techcrunch.com/2020/12/03/stripe-announces-embedded-business-banking-service-stripe-treasury/
+  plate: stripe-treasury.webp
+  plate_size: [640, 669]
+  cloth: "#c99c45"
+  ink: "#231b0e"
+  accent: "#8a6420"
+  thickness: 44
+  blurb: >-
+    TechCrunch's launch-day report on Stripe Treasury, an API that lets
+    software platforms give their customers bank accounts.
+  story: |
+    Stripe Treasury launched as an invite-only banking-as-a-service API.
+    Platforms on Stripe could now open bank accounts for their own customers,
+    move money and pay bills with API calls, and link those accounts to cards
+    from Stripe Issuing.
+
+    Stripe did not become a bank to do it. It worked with Evolve Bank & Trust
+    and Goldman Sachs in the US, with Citibank and Barclays lined up for other
+    countries. Shopify was the headline example: its Balance accounts ran on
+    Treasury.
+  part: |
+    Shravan helped grow Stripe Treasury from an idea to hundreds of millions of
+    dollars in deposits.
+
+    He also led Stripe's Issuing integrations across multiple partner banks.
+    Issuing is how platforms attached cards to those new accounts.
+
+- slug: shopify-balance
+  publication: TechCrunch
+  author: Anthony Ha
+  date: 2020-05-20
+  spine: "Shopify Balance"
+  headline: "Shopify announces a new merchant debit card and support for payment installment plans"
+  url: https://techcrunch.com/2020/05/20/shopify-balance/
+  archive: https://web.archive.org/web/20200521114522/https://techcrunch.com/2020/05/20/shopify-balance/
+  plate: shopify-balance.webp
+  plate_size: [640, 436]
+  cloth: "#2e4a37"
+  ink: "#e9e2cb"
+  thickness: 48
+  blurb: >-
+    Shopify introduces Balance, a free business account and debit card for
+    its merchants, at its Reunite event.
+  story: |
+    At Reunite, a virtual event for its million merchants, Shopify announced
+    Balance: a business account with no fees and no minimum balance, and a
+    physical or virtual debit card.
+
+    At first the account would hold only money earned through Shopify, but
+    merchants could track cash flow and pay bills from it. Shopify also added
+    interest-free payment in four installments. It said only that a financial
+    partner was behind Balance. In December, that partner turned out to be
+    Stripe.
+  part: |
+    Behind the scenes, Balance ran on Stripe Treasury, the banking platform
+    Shravan helped build at Stripe.
+
+    Merchants saw a Shopify product. Underneath it were Treasury's accounts,
+    money movement and partner banks.
+
+- slug: new-dropbox
+  publication: The Verge
+  author: Sean Hollister
+  date: 2019-06-11
+  spine: "The New Dropbox"
+  headline: "Dropbox is getting a massive overhaul, wants to be the center of your workflow"
+  url: https://www.theverge.com/2019/6/11/18661673/new-dropbox-desktop-app-google-docs-slack-atlassian
+  archive: https://web.archive.org/web/20190612131514/https://www.theverge.com/2019/6/11/18661673/new-dropbox-desktop-app-google-docs-slack-atlassian
+  plate: new-dropbox.webp
+  plate_size: [640, 704]
+  cloth: "#2c2462"
+  ink: "#b9ecd9"
+  thickness: 46
+  blurb: >-
+    The Verge previews the new Dropbox, a desktop app meant to turn a sync
+    folder into a workspace for teams.
+  story: |
+    For most of its life, Dropbox was a folder that synced to the cloud. In
+    June 2019 it previewed a larger idea: one desktop app where teams could
+    work without jumping between browser tabs.
+
+    From inside the new Dropbox, people could edit Google and Microsoft
+    documents, start Slack conversations and Zoom calls, and manage Atlassian
+    projects. It added to-do lists, task assignments, comments, a feed of team
+    activity, and one search bar for everything.
+  part: |
+    After Dropbox acquired Pixelapse, Shravan led teams that built
+    collaboration products at Dropbox.
+
+    Those products included the new Dropbox, file history and image previews.
+
+- slug: dropbox-acquires-pixelapse
+  publication: VentureBeat
+  author: Kia Kokalitcheva
+  date: 2015-01-26
+  spine: "Dropbox Acquires Pixelapse"
+  headline: "Dropbox acquires Pixelapse, a version-control and collaboration tool for designers"
+  url: https://venturebeat.com/2015/01/26/dropbox-acquires-pixelapse-a-version-control-and-collaboration-tool-for-designers/
+  archive: https://web.archive.org/web/20150129112945/http://venturebeat.com/2015/01/26/dropbox-acquires-pixelapse-a-version-control-and-collaboration-tool-for-designers/
+  plate: dropbox-acquires-pixelapse.webp
+  plate_size: [640, 853]
+  cloth: "#7a2f2b"
+  ink: "#f1dcc6"
+  thickness: 50
+  blurb: >-
+    VentureBeat reports on Dropbox's acquisition of Pixelapse, the
+    version-control tool for designers that Shravan co-founded.
+  story: |
+    Dropbox bought Pixelapse to strengthen its tools for creative teams.
+    Pixelapse gave designers what GitHub gave developers: version history and
+    a shared place to work on files in progress.
+
+    It already synced with Dropbox and supported more than 50 file formats,
+    from Photoshop to HTML. VentureBeat read the deal as a sign that Dropbox
+    wanted people to keep their favorite tools and store the work in Dropbox.
+    Pixelapse would run for another year while its team brought the same
+    workflows into Dropbox.
+  part: |
+    Shravan co-founded Pixelapse with Min Ming Lo in 2011 and served as its
+    CEO.
+
+    He grew the company to profitability and tens of thousands of designers
+    before the acquisition, then led collaboration teams at Dropbox.
+
+- slug: pixelapse
+  publication: TechCrunch
+  author: Chris Velazco
+  date: 2013-02-13
+  spine: "Version Control for Design"
+  headline: "YC-Backed Pixelapse Brings GitHub-Style Sharing & Version Control To Your Design Projects"
+  url: https://techcrunch.com/2013/02/13/yc-backed-pixelapse-brings-github-style-sharing-version-control-to-your-design-projects/
+  archive: https://web.archive.org/web/20130216005429/http://techcrunch.com/2013/02/13/yc-backed-pixelapse-brings-github-style-sharing-version-control-to-your-design-projects/
+  plate: pixelapse.webp
+  plate_size: [640, 859]
+  cloth: "#ece4d2"
+  ink: "#1d5c9c"
+  accent: "#1d5c9c"
+  thickness: 56
+  blurb: >-
+    An early look at Pixelapse, the startup Shravan co-founded to bring
+    GitHub-style version control to designers.
+  story: |
+    Developers could track every change with GitHub, but designers had no
+    good way to manage their versions. Pixelapse set out to fix that.
+
+    Its app watched a folder and backed up each change, so designers could
+    browse a visual timeline of every file and download any earlier version.
+    Teams could comment on work in progress and mark it up. By then,
+    Pixelapse hosted more than half a million image revisions for thousands
+    of users.
+  part: |
+    Shravan co-founded Pixelapse with Min Ming Lo and led it as CEO. The
+    company went through StartX at Stanford and Y Combinator.
+
+    In this article, he describes the public gallery:
+  quote: "When shared to the public, those revisions show the growth of a piece."

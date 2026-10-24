@@ -1,0 +1,23 @@
+<svg class="cover__svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <g>
+    <rect x="17" y="18" width="11" height="48" rx="1"/>
+    <rect x="36.1" y="18" width="11" height="48" rx="1"/>
+    <rect x="55.3" y="18" width="11" height="48" rx="1"/>
+    <rect x="74.4" y="18" width="11" height="48" rx="1"/>
+    <rect x="93.5" y="18" width="11" height="48" rx="1"/>
+    <rect x="112.6" y="18" width="11" height="48" rx="1"/>
+    <rect x="131.8" y="18" width="11" height="48" rx="1"/>
+    <rect x="150.9" y="18" width="11" height="48" rx="1"/>
+    <rect x="170" y="18" width="11" height="48" rx="1"/>
+  </g>
+  <path d="M17 76 L70 103 M100 76 V103 M183 76 L130 103"/>
+  <rect x="62" y="103" width="76" height="18" rx="1.5" fill="currentColor"/>
+  <path d="M76 121 L34 146 M100 121 V146 M124 121 L166 146"/>
+  <g>
+    <path d="M14 156 L34 146 L54 156 Z M80 156 L100 146 L120 156 Z M146 156 L166 146 L186 156 Z"/>
+    <path d="M19 160 V176 M27 160 V176 M34 160 V176 M41 160 V176 M49 160 V176"/>
+    <path d="M85 160 V176 M93 160 V176 M100 160 V176 M107 160 V176 M115 160 V176"/>
+    <path d="M151 160 V176 M159 160 V176 M166 160 V176 M173 160 V176 M181 160 V176"/>
+    <path d="M14 180 H54 M80 180 H120 M146 180 H186"/>
+  </g>
+</svg>

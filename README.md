@@ -9,6 +9,7 @@ Static personal site served with GitHub Pages.
 - `_essays/*.md`: essay content files
 - `_config.yml`: Jekyll configuration for essay routing
 - `static/style.css`: styles and responsive behavior
+- `_data/press.yml`, `_includes/press-shelf.html`, `static/press.css`, `static/press.js`: the homepage press shelf
 - `static/`: image and static assets
 - `CNAME`: custom domain
 
@@ -51,6 +52,28 @@ The filename becomes the route:
 
 - `_essays/why-launch.md` -> `/why-launch/`
 - `_essays/great-product.md` -> `/great-product/`
+
+## Press Shelf
+
+The homepage shows press coverage as a stack of books. Each book opens into a
+short reader: cover, title page, a plate of the article as first published,
+a summary, Shravan's part, and a link to the original.
+
+To add a book:
+
+1. Add an entry to `_data/press.yml` (the comments at the top list each field).
+2. Add a plate image at `static/press/<slug>.webp`, about 640px wide: a crop of
+   the article's masthead, headline, and lead image, taken from the Internet
+   Archive copy (or a screenshot, for paywalled articles). Keep body text to a
+   paragraph or two.
+3. Add cover art at `_includes/press-art/<slug>.svg` (line art in `currentColor`;
+   `class="art-fill"` fills a shape with the cover color).
+4. Only if you hold reprint rights: add page images of the full article as
+   `reprint`, and the notice the license requires as `credit`. The pages take
+   the place of the summary.
+
+Without JavaScript, the spines are plain links to the articles.
+`/#press-<slug>` opens a book directly.
 
 ## Analytics (Cloudflare + Google Analytics)
 

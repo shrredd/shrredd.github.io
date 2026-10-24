@@ -1,0 +1,23 @@
+<svg class="cover__svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="14" y="22" width="112" height="84" rx="5"/>
+  <path d="M14 36 H126"/>
+  <path d="M26 48 H46 M26 56 H40 M26 64 H44" stroke-width="1"/>
+  <rect class="art-fill" x="44" y="56" width="112" height="84" rx="5"/>
+  <path d="M44 70 H156"/>
+  <path d="M56 82 H100 M56 90 H92 M56 98 H96" stroke-width="1"/>
+  <rect class="art-fill" x="74" y="92" width="112" height="86" rx="5"/>
+  <path d="M74 106 H186"/>
+  <g fill="currentColor" stroke="none">
+    <circle cx="21" cy="29" r="1.8"/><circle cx="28" cy="29" r="1.8"/>
+    <circle cx="51" cy="63" r="1.8"/><circle cx="58" cy="63" r="1.8"/>
+    <circle cx="81" cy="99" r="1.8"/><circle cx="88" cy="99" r="1.8"/>
+  </g>
+  <rect x="86" y="118" width="9" height="9" rx="1.5"/>
+  <path d="M88.4 122.6 l2.1 2.1 l3.9 -4.4"/>
+  <path d="M103 122.5 H170"/>
+  <rect x="86" y="136" width="9" height="9" rx="1.5"/>
+  <path d="M88.4 140.6 l2.1 2.1 l3.9 -4.4"/>
+  <path d="M103 140.5 H156"/>
+  <rect x="86" y="154" width="9" height="9" rx="1.5"/>
+  <path d="M103 158.5 H162"/>
+</svg>

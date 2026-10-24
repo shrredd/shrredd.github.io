@@ -1,0 +1,1241 @@
+/* Press shelf and reader (homepage only). See _includes/press-shelf.html. */
+
+:root {
+  /* Cloth grain and page paper */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --paper: #f6f1e6;
+  --paper-ink: #2b2924;
+}
+
+/* ── Press shelf ── */
+
+/* Books lie flat with their spines out, after press.stripe.com. The shelf is
+   one 3D space, so a cover tucks behind the spine above it. press.js moves
+   the vanishing point with the scroll. */
+.shelf {
+  --depth: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 2em 0 1em;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.shelf-book {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(var(--t) * 1px);
+  color: var(--ink);
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Pointed at, a book slides out and tips its cover up for a look, and the
+   book above it lifts out of the way. */
+.shelf-book:focus-visible {
+  outline: none;
+  transform: translate3d(0, 0, 36px) rotateX(-20deg);
+}
+
+.shelf-book:has(+ .shelf-book:focus-visible) {
+  transform: translate3d(0, -20px, 0) rotateX(0deg);
+}
+
+@media (hover: hover) {
+  .shelf-book:hover {
+    transform: translate3d(0, 0, 36px) rotateX(-20deg);
+  }
+
+  .shelf-book:has(+ .shelf-book:hover) {
+    transform: translate3d(0, -20px, 0) rotateX(0deg);
+  }
+}
+
+.spine,
+.shelf-book__top,
+.shelf-book__bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.spine {
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px 0 20px;
+  border-radius: 2px;
+  background:
+    linear-gradient(rgb(255 255 255 / 0.14), rgb(255 255 255 / 0) 32%, rgb(0 0 0 / 0) 60%, rgb(0 0 0 / 0.22)),
+    var(--grain),
+    var(--cloth);
+  box-shadow: 0 18px 22px -20px rgb(0 0 0 / 0.6);
+}
+
+/* Foil rules along the spine */
+.spine::before {
+  content: '';
+  position: absolute;
+  inset: 4px 0;
+  border-block: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
+  pointer-events: none;
+}
+
+.shelf-book:focus-visible .spine {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.spine__pub {
+  flex: 0 0 22%;
+  overflow: hidden;
+  font: 600 10px/1 var(--f-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.spine__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  font: 400 18px/1.1 var(--f-prose);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spine__year {
+  font: 500 11px/1 var(--f-body);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.8;
+}
+
+.spine__mark,
+.cover__mark,
+.back__mark,
+.colophon__mark {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: italic 600 11px/1 var(--f-prose);
+  opacity: 0.85;
+}
+
+/* The cover, seen from above, and the back cover, seen from below. press.js
+   copies each book's covers in, turned to lie along the spine. */
+.shelf-book__top,
+.shelf-book__bottom {
+  height: var(--depth);
+  overflow: hidden;
+  container-type: size;
+}
+
+.shelf-book__face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100cqh;
+  height: 100cqw;
+  container-type: size;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.shelf-book__face .rb-page,
+.shelf-book__face .rb-back {
+  font-size: 4.1cqw;
+}
+
+/* Light falls on the covers; the undersides sit in shadow */
+.shelf-book__top::after,
+.shelf-book__bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shelf-book__top::after {
+  background: linear-gradient(to top, rgb(255 255 255 / 0.06), rgb(0 0 0 / 0.28));
+}
+
+.shelf-book__bottom::after {
+  background: linear-gradient(rgb(0 0 0 / 0.22), rgb(0 0 0 / 0.42));
+}
+
+.shelf-book__top {
+  bottom: 100%;
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+  background:
+    linear-gradient(to top, rgb(255 255 255 / 0.1), rgb(0 0 0 / 0.3)),
+    var(--grain),
+    var(--cloth);
+}
+
+.shelf-book__bottom {
+  top: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  background: linear-gradient(rgb(0 0 0 / 0.22), rgb(0 0 0 / 0.42)), var(--cloth);
+}
+
+@media (max-width: 760px) {
+  .shelf {
+    --depth: 140px;
+    gap: 12px;
+    perspective: 1000px;
+  }
+
+  .shelf-book {
+    height: calc(var(--t) * 0.8px);
+  }
+
+  .spine {
+    gap: 10px;
+    padding: 0 12px 0 14px;
+  }
+
+  .spine__pub {
+    flex-basis: 84px;
+    font-size: 9px;
+  }
+
+  .spine__title {
+    font-size: 15px;
+  }
+
+  .spine__mark {
+    display: none;
+  }
+}
+
+/* ── Press reader ── */
+
+html.reader-open {
+  overflow: hidden;
+}
+
+.reader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background-color: var(--cloth);
+  font-family: var(--f-body);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.reader::backdrop {
+  background: transparent;
+}
+
+.reader[open] {
+  animation: reader-in 0.35s ease both;
+}
+
+.reader.is-closing {
+  animation: reader-out 0.24s ease both;
+}
+
+@keyframes reader-in {
+  from { opacity: 0; }
+}
+
+@keyframes reader-out {
+  to { opacity: 0; }
+}
+
+.reader__inner {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) clamp(300px, 31vw, 440px);
+  height: 100%;
+}
+
+.reader button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.reader button:focus-visible,
+.reader a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Rail: back arrow and one tick per book */
+.reader__rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reader__close {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.reader__close,
+.reader__turn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
+  border-radius: 999px;
+  background: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.reader__close:hover,
+.reader__turn:hover:not(:disabled) {
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.reader__turn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.reader__ticks {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reader__tick {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.reader__tick::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 14px;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: currentColor;
+  opacity: 0.35;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.reader__tick:hover::before {
+  opacity: 0.7;
+}
+
+.reader__tick[aria-current="true"]::before {
+  width: 22px;
+  opacity: 1;
+}
+
+/* Hovering a tick shows a tiny copy of that book's cover and its title */
+.reader__peek {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+  opacity: 0;
+  translate: -6px -50%;
+  transition: opacity 0.2s ease, translate 0.2s ease;
+}
+
+.reader__tick:hover .reader__peek,
+.reader__tick:focus-visible .reader__peek {
+  opacity: 1;
+  translate: 0 -50%;
+}
+
+.reader__peek-cover {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 62px;
+  overflow: hidden;
+  container-type: size;
+  border-radius: 1px 3px 3px 1px;
+  box-shadow: 0 8px 16px -8px rgb(0 0 0 / 0.6);
+}
+
+.reader__peek-cover .rb-page {
+  font-size: 4.1cqw;
+}
+
+.reader__peek-label {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--cloth);
+  font: italic 400 15px/1.2 var(--f-prose);
+  white-space: nowrap;
+}
+
+/* Stage: the book and its page controls */
+.reader__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  min-width: 0;
+  padding: 40px 24px;
+}
+
+.reader__holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  perspective: 2200px;
+  cursor: pointer;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* A soft shadow on the floor under the closed book */
+.reader__holder::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  width: calc(var(--pw) * 0.95);
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 0.3), rgb(0 0 0 / 0));
+  translate: -50% 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.reader:not(.is-shut) .reader__holder::before {
+  opacity: 0;
+}
+
+.reader__holder,
+.reader__info {
+  transition: opacity 0.2s ease, translate 0.2s ease;
+}
+
+.reader[open] .reader__holder {
+  animation: book-in 0.8s 0.05s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reader[open] .reader__info {
+  animation: book-in 0.7s 0.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reader.is-swapping .reader__holder,
+.reader.is-swapping .reader__info {
+  opacity: 0;
+  translate: 0 8px;
+}
+
+@keyframes book-in {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+}
+
+.reader__controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.reader__folio {
+  min-width: 16ch;
+  margin: 0;
+  font: 600 11px/1.3 var(--f-body);
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.reader__turn-label {
+  display: none;
+  padding-left: 16px;
+}
+
+.reader.is-shut .reader__turn--next {
+  padding-right: 10px;
+}
+
+.reader.is-shut .reader__turn-label {
+  display: inline;
+}
+
+/* Details: like the right column on press.stripe.com */
+.reader__info {
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(56px, 16vh, 160px) 56px 56px 8px;
+}
+
+.rb-info {
+  max-width: 400px;
+}
+
+.rb-info__kicker {
+  margin: 0 0 16px;
+  font: 600 11px/1.4 var(--f-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.rb-info__title {
+  margin: 0;
+  font: 600 clamp(24px, 2.3vw, 31px)/1.2 var(--f-prose);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.rb-info__byline {
+  margin: 10px 0 0;
+  font: italic 400 19px/1.4 var(--f-prose);
+  opacity: 0.9;
+}
+
+.rb-info__rule {
+  width: 44px;
+  height: 1px;
+  margin: 26px 0;
+  border: 0;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.rb-info__blurb {
+  margin: 0 0 32px;
+  font: 400 17px/1.6 var(--f-prose);
+}
+
+.rb-info__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+}
+
+.rb-info__links li {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+}
+
+.rb-info__links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0;
+  color: inherit;
+  font: 500 14px/1.35 var(--f-body);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.rb-info__links a:hover {
+  opacity: 0.7;
+}
+
+.rb-info__credit {
+  margin: 18px 0 0;
+  font: 400 12px/1.5 var(--f-body);
+  opacity: 0.7;
+}
+
+/* The book: closed at an angle as a whole object (covers, spine, page
+   edges), then opened flat into pages. Leaves turn on the spine. When shut,
+   press.js lets you drag it round by setting --rx and --ry; the turn pivots
+   on the middle of the closed book. */
+.rb {
+  --tx: calc(var(--pw) * -0.5);
+  --rx: 10deg;
+  --ry: 24deg;
+  position: relative;
+  flex: none;
+  width: calc(var(--pw) * 2);
+  height: var(--ph);
+  cursor: grab;
+  transform-style: preserve-3d;
+  transform-origin: calc(var(--pw) * 1.5) 50% calc(var(--t) * -0.5);
+  transform: translateX(var(--tx)) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 1s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.rb[data-mode="single"] {
+  --tx: 0px;
+  width: var(--pw);
+  transform-origin: calc(var(--pw) * 0.5) 50% calc(var(--t) * -0.5);
+}
+
+.rb.is-open {
+  --tx: 0px;
+  --rx: 0deg;
+  --ry: 0deg;
+  cursor: pointer;
+}
+
+.rb.is-held {
+  cursor: grabbing;
+  transition: none;
+}
+
+.rb__back,
+.rb__spine,
+.rb__edge,
+.rb__head,
+.rb__foot {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+/* The back cover faces away, so it reads the right way round from behind */
+.rb__back {
+  top: 0;
+  left: var(--pw);
+  width: var(--pw);
+  height: var(--ph);
+  overflow: hidden;
+  container-type: size;
+  border-radius: 3px 0 0 3px;
+  background: var(--cloth);
+  transform: translateZ(calc(var(--t) * -1)) rotateY(180deg);
+}
+
+.rb__spine {
+  top: 0;
+  left: calc(var(--pw) - var(--t));
+  width: var(--t);
+  height: var(--ph);
+  border-radius: 3px 0 0 3px;
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+  background: var(--cloth);
+}
+
+/* The spine from the shelf, set upright */
+.rb__spine .spine {
+  writing-mode: vertical-rl;
+  gap: calc(var(--t) * 0.5);
+  padding: calc(var(--t) * 0.8) 0 calc(var(--t) * 0.6);
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.3), rgb(255 255 255 / 0.08) 45%, rgb(0 0 0 / 0.2)),
+    var(--grain),
+    var(--cloth);
+  box-shadow: none;
+}
+
+.rb__spine .spine::before {
+  inset: 0 3px;
+}
+
+.rb__spine .spine__pub {
+  flex-basis: auto;
+  font-size: calc(var(--t) * 0.28);
+}
+
+.rb__spine .spine__title {
+  font-size: calc(var(--t) * 0.5);
+}
+
+.rb__spine .spine__year {
+  font-size: calc(var(--t) * 0.3);
+}
+
+.rb__spine .spine__mark {
+  display: inline-grid;
+  width: calc(var(--t) * 0.58);
+  height: calc(var(--t) * 0.58);
+  font-size: calc(var(--t) * 0.34);
+}
+
+.rb__edge {
+  top: 3px;
+  left: calc(var(--pw) * 2);
+  width: var(--t);
+  height: calc(var(--ph) - 6px);
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #f3eee3 0 1px, #e0d7c5 1px 2px);
+}
+
+.rb__head,
+.rb__foot {
+  left: var(--pw);
+  width: calc(var(--pw) - 3px);
+  height: var(--t);
+  background: repeating-linear-gradient(#f3eee3 0 1px, #e0d7c5 1px 2px);
+}
+
+.rb__head {
+  top: calc(3px - var(--t));
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+}
+
+.rb__foot {
+  top: calc(var(--ph) - 3px);
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+}
+
+.rb[data-mode="single"] .rb__back,
+.rb[data-mode="single"] .rb__head,
+.rb[data-mode="single"] .rb__foot {
+  left: 0;
+}
+
+.rb[data-mode="single"] .rb__spine {
+  left: calc(var(--t) * -1);
+}
+
+.rb[data-mode="single"] .rb__edge {
+  left: var(--pw);
+}
+
+.rb.is-open .rb__spine,
+.rb.is-open .rb__edge,
+.rb.is-open .rb__head,
+.rb.is-open .rb__foot {
+  opacity: 0;
+}
+
+/* The pages are one flat layer; seen from behind, it hides and the back
+   cover shows instead. */
+.rb__leaves {
+  position: absolute;
+  inset: 0;
+  perspective: 2600px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rb__leaf {
+  position: absolute;
+  top: 0;
+  left: var(--pw);
+  width: var(--pw);
+  height: var(--ph);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.2, 1);
+}
+
+.rb[data-mode="single"] .rb__leaf {
+  left: 0;
+}
+
+.rb__leaf.is-turned {
+  transform: rotateY(-180deg);
+}
+
+.rb:not(.is-open) .rb__leaf:not(:first-child) {
+  visibility: hidden;
+  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.2, 1), visibility 0s 0.9s;
+}
+
+/* The back cover: the blurb, the date, and the mark */
+.rb-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10cqh 13cqw 8cqh 11cqw;
+  color: var(--ink);
+  font: 400 clamp(10px, 4.1cqw, 15px)/1.5 var(--f-prose);
+  text-align: center;
+  background:
+    linear-gradient(270deg, rgb(0 0 0 / 0.3), rgb(255 255 255 / 0.1) 3.5%, rgb(0 0 0 / 0.12) 6%, rgb(0 0 0 / 0) 10%),
+    var(--grain),
+    var(--cloth);
+}
+
+.rb-back :where(p) {
+  margin: 0;
+}
+
+.back__pub {
+  margin-top: auto;
+  font: 600 0.62em/1 var(--f-body);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.back__blurb {
+  margin: 1.4em 0 1.2em;
+  font-size: 1.15em;
+  font-style: italic;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.back__date {
+  font-size: 0.8em;
+  opacity: 0.75;
+}
+
+.rb-back .back__mark {
+  width: 2em;
+  height: 2em;
+  margin-top: auto;
+  font-size: 0.8em;
+}
+
+.rb__face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  container-type: size;
+  background: var(--paper);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rb.is-open .rb__face:not([inert]) {
+  box-shadow: 0 22px 44px -26px rgb(0 0 0 / 0.6);
+}
+
+.rb__face--front {
+  border-radius: 0 3px 3px 0;
+}
+
+.rb__face--back {
+  border-radius: 3px 0 0 3px;
+  transform: rotateY(180deg);
+}
+
+/* Pages darken toward the gutter, and dim as they turn */
+.rb__face::after,
+.rb__face::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rb__face::after {
+  background: linear-gradient(to right, rgb(0 0 0 / 0.16), rgb(0 0 0 / 0.04) 6%, rgb(0 0 0 / 0) 14%);
+}
+
+.rb__face--back::after {
+  background: linear-gradient(to left, rgb(0 0 0 / 0.16), rgb(0 0 0 / 0.04) 6%, rgb(0 0 0 / 0) 14%);
+}
+
+.rb__face::before {
+  z-index: 1;
+  background: rgb(0 0 0 / 0.2);
+  opacity: 0;
+}
+
+.rb__leaf.is-moving .rb__face::before {
+  animation: page-dim 0.9s ease-in-out;
+}
+
+@keyframes page-dim {
+  50% { opacity: 1; }
+}
+
+/* One page at a time: a turned page fades as it leaves */
+.rb[data-mode="single"] .rb__face {
+  transition: opacity 0.2s ease;
+}
+
+.rb[data-mode="single"] .rb__leaf.is-turned .rb__face {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.5s;
+}
+
+/* Pages. Type scales with the page, set in container units. */
+.rb-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 11cqh 12cqw 8cqh;
+  overflow: hidden;
+  color: var(--paper-ink);
+  font: 400 clamp(10px, 4.1cqw, 15px)/1.48 var(--f-prose);
+  background: var(--paper);
+}
+
+.rb-page :where(p, h3, figure, figcaption, blockquote) {
+  margin: 0;
+}
+
+.rb-page__head {
+  margin-bottom: 7cqh;
+  font: 600 0.62em/1 var(--f-body);
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.rb-page .rb-page__folio {
+  margin-top: auto;
+  padding-top: 1em;
+  font-size: 0.8em;
+  text-align: center;
+  font-variant-numeric: oldstyle-nums;
+  opacity: 0.55;
+}
+
+.rb-page--cover {
+  align-items: center;
+  padding: 10cqh 11cqw 8cqh 15cqw;
+  color: var(--ink);
+  text-align: center;
+  background:
+    linear-gradient(90deg, rgb(0 0 0 / 0.3), rgb(255 255 255 / 0.1) 3.5%, rgb(0 0 0 / 0.12) 6%, rgb(0 0 0 / 0) 10%),
+    var(--grain),
+    var(--cloth);
+}
+
+.cover__pub {
+  font: 600 0.62em/1 var(--f-body);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.cover__art {
+  width: 66cqw;
+  margin: auto 0;
+}
+
+.cover__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cover__svg .art-fill {
+  fill: var(--cloth);
+}
+
+.cover__title {
+  font: 600 2em/1.08 var(--f-prose);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.cover__author {
+  margin-top: 0.6em;
+  font: italic 400 1em/1.3 var(--f-prose);
+  opacity: 0.9;
+}
+
+.rb-page .cover__mark,
+.rb-page .colophon__mark {
+  width: 2em;
+  height: 2em;
+  margin-top: 5cqh;
+  font-size: 0.8em;
+}
+
+.rb-page--endpaper {
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--accent) 45%, transparent) 1px, transparent 1.6px) 0 0 / 10px 10px,
+    color-mix(in srgb, var(--accent) 10%, var(--paper));
+}
+
+.rb-page--title {
+  align-items: center;
+  padding-top: 16cqh;
+  text-align: center;
+}
+
+.title__pub {
+  color: var(--accent);
+  font: 600 0.62em/1 var(--f-body);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.title__headline {
+  margin-top: 1.4em;
+  font: 600 1.45em/1.22 var(--f-prose);
+  text-wrap: balance;
+}
+
+.title__byline {
+  margin-top: 1.4em;
+  font-style: italic;
+}
+
+.title__date {
+  margin-top: 0.3em;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.title__imprint {
+  margin-top: auto;
+  font: 600 0.6em/1 var(--f-body);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.rb-page--plate {
+  align-items: center;
+}
+
+.rb-page--plate img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 58cqh;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 8px 18px -8px rgb(0 0 0 / 0.35);
+}
+
+.rb-page--plate figcaption {
+  margin-top: 1.4em;
+  font-size: 0.78em;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+  opacity: 0.75;
+}
+
+/* A page of the article itself, reprinted with permission. The scan's white
+   paper takes on the page's tone, so the type sits on the page. */
+.rb-page--reprint {
+  align-items: center;
+  padding: 8cqh 6cqw 5cqh;
+}
+
+.rb-page--reprint .rb-page__head {
+  margin-bottom: 4cqh;
+}
+
+.rb-page--reprint img {
+  display: block;
+  flex: 0 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: top;
+  mix-blend-mode: multiply;
+}
+
+.text__heading {
+  margin-bottom: 0.9em;
+  color: var(--accent);
+  font: 600 0.7em/1 var(--f-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rb-page--text p + p {
+  margin-top: 0.75em;
+}
+
+.rb-page--story .text__heading + p::first-letter {
+  float: left;
+  margin: 0.06em 0.08em 0 0;
+  color: var(--accent);
+  font-size: 3.3em;
+  font-weight: 600;
+  line-height: 0.8;
+}
+
+.text__quote {
+  margin-top: 1.2em;
+  padding-left: 0.9em;
+  border-left: 2px solid var(--accent);
+  font-style: italic;
+}
+
+.text__quote footer {
+  margin-top: 0.5em;
+  font: 500 0.7em/1.3 var(--f-body);
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.rb-page--colophon {
+  align-items: center;
+  text-align: center;
+}
+
+.rb-page--colophon .text__heading {
+  margin-top: 8cqh;
+}
+
+.colophon__link {
+  display: inline-flex;
+  gap: 0.5em;
+  margin-top: 0.4em;
+  padding: 0.8em 1.25em;
+  border-radius: 999px;
+  color: var(--paper);
+  background: var(--accent);
+  font: 600 0.78em/1 var(--f-body);
+  text-decoration: none;
+}
+
+.colophon__link:hover {
+  filter: brightness(1.12);
+}
+
+.colophon__note {
+  margin-top: 2em;
+  font-size: 0.78em;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.rb-page .colophon__mark {
+  margin-top: auto;
+  color: var(--accent);
+}
+
+@media (max-width: 899px) {
+  .reader {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .reader__inner {
+    display: block;
+    height: auto;
+  }
+
+  .reader__rail {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: var(--cloth);
+    transition: background-color 0.6s ease;
+  }
+
+  .reader__close {
+    position: static;
+    translate: none;
+  }
+
+  .reader__ticks {
+    flex-direction: row;
+  }
+
+  .reader__tick {
+    width: 18px;
+    height: 40px;
+  }
+
+  .reader__tick::before {
+    top: 12px;
+    left: 50%;
+    width: 1.5px;
+    height: 16px;
+    margin: 0 0 0 -0.75px;
+    transition: height 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+  }
+
+  .reader__tick[aria-current="true"]::before {
+    top: 8px;
+    width: 1.5px;
+    height: 24px;
+  }
+
+  /* No hover on phones, and no room beside the ticks */
+  .reader__peek {
+    display: none;
+  }
+
+  .reader__stage {
+    gap: 24px;
+    padding: 16px 16px 32px;
+  }
+
+  .reader__info {
+    overflow: visible;
+    padding: 8px 24px 72px;
+  }
+
+  .rb-info {
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shelf-book,
+  .rb,
+  .rb__leaf,
+  .rb__face,
+  .reader__holder,
+  .reader__info {
+    transition: none !important;
+  }
+
+  .reader[open],
+  .reader.is-closing,
+  .reader[open] .reader__holder,
+  .reader[open] .reader__info,
+  .rb__leaf.is-moving .rb__face::before {
+    animation: none;
+  }
+}
