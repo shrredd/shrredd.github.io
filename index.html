@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Shravan Reddy">
-  <meta name="description" content="Shravan Reddy is a General Partner at Pear VC investing in early-stage AI, B2B software, and fintech. Essays on startup building, product design, and technology.">
+  <meta name="description" content="Shravan Reddy is a venture capitalist and General Partner at Pear VC, investing in early-stage AI, B2B software, and fintech. Ex-Stripe; Pixelapse co-founder.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://shravanreddy.com/">
   <link rel="icon" href="/static/favicon.ico" sizes="any">
@@ -48,35 +48,72 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Shravan Reddy",
-      "url": "https://shravanreddy.com/"
-    }
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Shravan Reddy",
-      "url": "https://shravanreddy.com/",
-      "description": "General Partner at Pear VC investing in early-stage AI, B2B software, and fintech.",
-      "image": "https://shravanreddy.com/static/shravan-headshot-520.jpg?v=20261024c",
-      "jobTitle": "General Partner",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Pear VC",
-        "url": "https://pear.vc"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Stanford University"
-      },
-      "sameAs": [
-        "https://github.com/shrredd",
-        "https://www.linkedin.com/in/shrredd/",
-        "https://twitter.com/shravangreddy",
-        "https://instagram.com/shravan"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://shravanreddy.com/#website",
+          "name": "Shravan Reddy",
+          "url": "https://shravanreddy.com/",
+          "publisher": { "@id": "https://shravanreddy.com/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://shravanreddy.com/#profile",
+          "url": "https://shravanreddy.com/",
+          "name": "Shravan Reddy | General Partner at Pear VC",
+          "isPartOf": { "@id": "https://shravanreddy.com/#website" },
+          "mainEntity": { "@id": "https://shravanreddy.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://shravanreddy.com/#person",
+          "name": "Shravan Reddy",
+          "givenName": "Shravan",
+          "familyName": "Reddy",
+          "url": "https://shravanreddy.com/",
+          "description": "General Partner at Pear VC investing in early-stage AI, B2B software, and fintech.",
+          "disambiguatingDescription": "Venture capitalist and General Partner at Pear VC; former engineering leader at Stripe and co-founder and CEO of Pixelapse, acquired by Dropbox.",
+          "image": "https://shravanreddy.com/static/shravan-headshot-520.jpg?v=20261024c",
+          "jobTitle": "General Partner",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Pear VC",
+            "url": "https://pear.vc",
+            "sameAs": ["https://www.linkedin.com/company/pear-vc/"]
+          },
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Stanford University",
+              "sameAs": "https://en.wikipedia.org/wiki/Stanford_University"
+            },
+            {
+              "@type": "Organization",
+              "name": "Stripe",
+              "url": "https://stripe.com",
+              "sameAs": "https://en.wikipedia.org/wiki/Stripe,_Inc."
+            },
+            {
+              "@type": "Organization",
+              "name": "Dropbox",
+              "url": "https://www.dropbox.com",
+              "sameAs": "https://en.wikipedia.org/wiki/Dropbox"
+            },
+            {
+              "@type": "Organization",
+              "name": "Pixelapse",
+              "url": "https://pixelapse.com"
+            }
+          ],
+          "knowsAbout": ["Venture capital", "Artificial intelligence", "B2B software", "Financial technology", "Banking infrastructure"],
+          "sameAs": [
+            "https://pear.vc/members/shravan-reddy/",
+            "https://www.linkedin.com/in/shrredd/",
+            "https://x.com/shravangreddy",
+            "https://github.com/shrredd",
+            "https://instagram.com/shravan"
+          ]
+        }
       ]
     }
   </script>
