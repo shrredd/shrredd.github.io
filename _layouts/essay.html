@@ -42,15 +42,21 @@
       "headline": {{ page.title | jsonify }},
       "description": {{ page.description | jsonify }},{% if page.og_image %}
       "image": "{{ site.url }}{{ page.og_image }}",{% endif %}
+      "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
       "author": {
         "@type": "Person",
+        "@id": "{{ site.url }}/#person",
         "name": "Shravan Reddy",
-        "url": "{{ site.url }}/"
+        "url": "{{ site.url }}/",
+        "jobTitle": "General Partner",
+        "worksFor": { "@type": "Organization", "name": "Pear VC", "url": "https://pear.vc" }
       }{% if page.date_published %},
       "datePublished": {{ page.date_published | jsonify }}{% endif %},
       "publisher": {
         "@type": "Person",
-        "name": "Shravan Reddy"
+        "@id": "{{ site.url }}/#person",
+        "name": "Shravan Reddy",
+        "url": "{{ site.url }}/"
       }
     }
   </script>
