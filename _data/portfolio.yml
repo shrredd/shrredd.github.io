@@ -18,7 +18,8 @@
 #   names itself, from a public source (press, or the company's own site), for
 #   example "$37M Series A led by Lightspeed, 2026". It shows under the sentence.
 #   Never Pear's check size, a valuation, or a round that is not announced.
-# - round_source: the public link behind `round` (kept here, not shown)
+# - round_source: where `round` comes from: a public link, or who confirmed it
+#   (kept here, not shown)
 # - logo: mask image in static/portfolio/ (default <slug>.png); see README
 # - logo_ratio: the logo image's width divided by its height
 # - logo_scale: optional size correction (default 1); above 1 for light,
@@ -72,6 +73,8 @@
   tag: Energy AI
   stage: seed
   about: AI agents and machine learning for power systems.
+  round: "$7.5M from Khosla Ventures, Conviction, and MCJ Collective"
+  round_source: https://pravah.notion.site/
   logo_ratio: 4.45
 
 - slug: nomadic
@@ -110,6 +113,8 @@
   tag: Software implementation
   stage: seed
   about: An AI implementation engine that sets up demos, pilots, and live instances of complex software.
+  round: "Seed backed by Lobby Capital"
+  round_source: https://pitchbook.com/profiles/company/770182-30
   logo_ratio: 4.04
   logo_scale: 0.88
 
@@ -128,7 +133,7 @@
   tag: Medicaid enrollment
   stage: seed
   about: Helps community health centers keep their patients covered by Medicaid and protect their revenue.
-  round: "Also backed by Flare Capital"
+  round: "Seed backed by Flare Capital"
   round_source: https://careers.flarecapital.com/companies/bridgehealthai
   logo_ratio: 7.78
   logo_scale: 1.05
@@ -139,7 +144,7 @@
   tag: AI chat ads
   stage: seed
   about: An ad network for AI chat apps.
-  round: "Also backed by Audacious Ventures"
+  round: "Seed backed by Audacious Ventures"
   round_source: https://elo.ad/
   logo_ratio: 2.31
   logo_scale: 0.93
@@ -161,7 +166,7 @@
   tag: Operations AI
   stage: seed
   about: Frontier AI for operations in staffing, logistics, manufacturing, and industrial services.
-  round: "Seed from Sunflower Capital, SV Angel, and angels from Anthropic"
+  round: "Seed backed by Sunflower Capital, SV Angel, and angels from Anthropic"
   round_source: https://usemeridian.io/
   logo_ratio: 3.81
 
@@ -171,7 +176,7 @@
   tag: Secure AI for finance
   stage: seed
   about: Secure AI infrastructure built for financial institutions and their teams.
-  round: "Also backed by Felicis, Jump Trading, and Consonant"
+  round: "Seed backed by Felicis, Jump Trading, and Consonant"
   round_source: https://www.perseuslabs.io/
   logo_ratio: 4.43
   logo_scale: 1.04
@@ -204,6 +209,8 @@
   tag: AI ad agency
   stage: seed
   about: A full-service AI ad agency for e-commerce brands that earns a share of the extra revenue it brings in.
+  round: "Seed backed by Penny Jar Capital"
+  round_source: https://www.vcbacked.co/company/polynomic
   logo_ratio: 5.66
   logo_scale: 1.08
 
