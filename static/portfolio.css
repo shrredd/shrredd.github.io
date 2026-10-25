@@ -1,0 +1,281 @@
+/* Portfolio wall (homepage only). See _includes/portfolio.html. */
+
+.pf-wall {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 1.5em 0 0;
+  list-style: none;
+}
+
+/* style.css indents lists and underlines links in list items */
+#content .pf-wall {
+  padding: 0;
+}
+
+#content .pf-item {
+  margin: 0;
+}
+
+/* /#portfolio-<slug> scrolls to a tile and marks it */
+.pf-item {
+  scroll-margin: 96px 0;
+}
+
+.pf-item:target .pf-tile {
+  border-color: var(--c-accent);
+}
+
+#content .pf-tile {
+  text-decoration: none;
+}
+
+.pf-tile {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 116px;
+  box-sizing: border-box;
+  padding: 11px 13px 12px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  color: var(--c-text);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.pf-tile:focus-visible {
+  border-radius: var(--r-md);
+}
+
+.pf-stage {
+  grid-row: 1;
+  justify-self: end;
+  font: 600 9.5px/1 var(--f-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+/* Every logo is a one-color mask filled with the page's ink, so the wall
+   reads as one set in both themes. Logos share the same area, not the same
+   width, so a wide wordmark and a square mark look the same size. */
+.pf-logo {
+  --area: 2600;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  display: block;
+  width: min(100%, 140px);
+  height: 26px;
+  margin: 10px 0;
+  background-color: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+  transition: background-color 0.15s ease;
+}
+
+@supports (width: calc(1px * sqrt(4))) {
+  .pf-logo {
+    width: min(100%, 140px, calc(1px * sqrt(var(--area) * var(--ratio)) * var(--scale, 1)));
+    height: auto;
+    aspect-ratio: var(--ratio);
+  }
+}
+
+.pf-tag {
+  grid-row: 3;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--c-text-muted);
+  text-wrap: balance;
+  transition: color 0.15s ease;
+}
+
+/* The name is for screen readers, and for when logos cannot show */
+.pf-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* One sentence on the company, shown above the tile on hover or focus.
+   It stays in the link's text for screen readers. */
+.pf-about {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  z-index: 2;
+  width: max-content;
+  max-width: 236px;
+  padding: 9px 12px 10px;
+  border-radius: var(--r-md);
+  color: var(--c-bg);
+  background: var(--c-text);
+  box-shadow: 0 10px 24px -12px rgb(0 0 0 / 0.45);
+  font: 400 14px/1.4 var(--f-prose);
+  text-align: left;
+  opacity: 0;
+  translate: -50% 4px;
+  pointer-events: none;
+  transition: opacity 0.15s ease, translate 0.15s ease;
+}
+
+/* The latest announced round, under a hairline */
+.pf-round {
+  display: block;
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  font: 500 11.5px/1.4 var(--f-body);
+  opacity: 0.8;
+}
+
+.pf-about::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--c-text);
+}
+
+/* Tiles at the ends of a row keep their note on the page */
+.pf-item:nth-child(4n + 1) .pf-about {
+  left: -1px;
+  translate: 0 4px;
+}
+
+.pf-item:nth-child(4n + 1) .pf-about::after {
+  left: 32px;
+}
+
+.pf-item:nth-child(4n) .pf-about {
+  left: auto;
+  right: -1px;
+  translate: 0 4px;
+}
+
+.pf-item:nth-child(4n) .pf-about::after {
+  left: auto;
+  right: 26px;
+}
+
+@media (hover: hover) {
+  .pf-tile:hover {
+    border-color: transparent;
+    background-color: var(--c-surface);
+  }
+
+  .pf-tile:hover .pf-logo {
+    background-color: var(--c-accent);
+  }
+
+  .pf-tile:hover .pf-tag {
+    color: var(--c-text);
+  }
+
+  .pf-tile:hover .pf-about {
+    opacity: 1;
+    translate: -50% 0;
+    transition-delay: 0.3s;
+  }
+
+  .pf-item:nth-child(4n + 1) .pf-tile:hover .pf-about,
+  .pf-item:nth-child(4n) .pf-tile:hover .pf-about {
+    translate: 0 0;
+  }
+}
+
+.pf-tile:focus-visible .pf-logo {
+  background-color: var(--c-accent);
+}
+
+.pf-tile:focus-visible .pf-about {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+.pf-item:nth-child(4n + 1) .pf-tile:focus-visible .pf-about,
+.pf-item:nth-child(4n) .pf-tile:focus-visible .pf-about {
+  translate: 0 0;
+}
+
+@media (max-width: 760px) {
+  .pf-wall {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .pf-tile {
+    min-height: 96px;
+    padding: 9px 10px 10px;
+  }
+
+  .pf-logo {
+    --area: 2000;
+    margin: 7px 0;
+  }
+
+  /* No room above the tiles for notes on narrow screens; screen readers
+     still read them */
+  .pf-about {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 520px) {
+  .pf-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pf-tile {
+    min-height: 92px;
+  }
+
+  .pf-logo {
+    --area: 2100;
+  }
+}
+
+/* High-contrast modes replace backgrounds, which would hide the masks */
+@media (forced-colors: active) {
+  .pf-logo {
+    display: none;
+  }
+
+  .pf-name {
+    position: static;
+    grid-row: 2;
+    align-self: center;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    font-weight: 600;
+  }
+}
+
+@media print {
+  .pf-logo {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-tile,
+  .pf-logo,
+  .pf-tag,
+  .pf-about {
+    transition: none;
+  }
+}

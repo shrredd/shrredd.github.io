@@ -302,42 +302,6 @@ sub {
   line-height: 1.5;
 }
 
-/* Portfolio grid */
-.portfolio-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0.8em 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.55em 2em;
-}
-
-.portfolio-grid li {
-  margin-bottom: 0;
-  font-size: 0.9375em;
-  line-height: 1.4;
-}
-
-.portfolio-tag {
-  color: var(--c-text-muted);
-  font-size: 0.875em;
-}
-
-.portfolio-stage {
-  display: inline-block;
-  font-size: 0.6875em;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--c-text-muted);
-  border: 1px solid var(--c-border);
-  border-radius: 999px;
-  padding: 0.15em 0.55em;
-  margin-left: 0.3em;
-  white-space: nowrap;
-  vertical-align: 0.1em;
-}
-
 /* ── Essay pages ── */
 
 .essay-page #content .article-header {
@@ -717,11 +681,6 @@ sub {
 
   img.rounded {
     width: 110px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 0.4em;
   }
 
   .essay-page .tier-aesthetic {

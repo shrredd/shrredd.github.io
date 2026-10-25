@@ -1,0 +1,40 @@
+{%- comment -%}
+  Portfolio wall. Each entry in _data/portfolio.yml is one tile: the company's
+  logo, drawn in the page's ink from a one-color mask in static/portfolio/, its
+  stage, and a short tag. Later stages come first. Pointing at a tile (or
+  focusing it) shows one sentence on the company and, when announced, its
+  latest round. No JavaScript.
+{%- endcomment -%}
+{%- assign stages = "series-b,series-a,seed,pre-seed" | split: "," -%}
+<section class="section portfolio" aria-labelledby="portfolio-title">
+  <h2 class="section-title" id="portfolio-title">Portfolio</h2>
+  <p class="notop">Companies Shravan has been lucky to back, most at pre-seed. The corner of each tile shows how far each one has come.</p>
+
+  <ul class="pf-wall">
+    {%- for stage in stages %}
+    {%- for company in site.data.portfolio %}
+    {%- if company.stage == stage %}
+    {%- capture slug_logo %}{{ company.slug }}.png{% endcapture %}
+    {%- assign logo = company.logo | default: slug_logo %}
+    {%- case stage %}
+      {%- when "series-b" %}{% assign label = "Series B" %}
+      {%- when "series-a" %}{% assign label = "Series A" %}
+      {%- when "seed" %}{% assign label = "Seed" %}
+      {%- else %}{% assign label = "Pre-seed" %}
+    {%- endcase %}
+    <li class="pf-item" id="portfolio-{{ company.slug }}">
+      <a class="pf-tile" href="{{ company.url }}">
+        <span class="pf-name">{{ company.name }}</span>
+        <span class="pf-logo" aria-hidden="true" style="--logo: url('{{ '/static/portfolio/' | append: logo | relative_url }}'); --ratio: {{ company.logo_ratio }};{% if company.logo_scale %} --scale: {{ company.logo_scale }};{% endif %}"></span>
+        <span class="pf-tag">{{ company.tag }}</span>
+        <span class="pf-stage">{{ label }}</span>
+        {%- if company.about %}
+        <span class="pf-about">{{ company.about }}{% if company.round %}<span class="pf-round">{{ company.round }}</span>{% endif %}</span>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+    {%- endfor %}
+  </ul>
+</section>

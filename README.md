@@ -9,6 +9,7 @@ Static personal site served with GitHub Pages.
 - `_essays/*.md`: essay content files
 - `_config.yml`: Jekyll configuration for essay routing
 - `static/style.css`: styles and responsive behavior
+- `_data/portfolio.yml`, `_includes/portfolio.html`, `static/portfolio.css`, `static/portfolio/`: the homepage portfolio wall
 - `_data/press.yml`, `_includes/press-shelf.html`, `static/press.css`, `static/press.js`: the homepage press shelf
 - `static/`: image and static assets
 - `CNAME`: custom domain
@@ -52,6 +53,32 @@ The filename becomes the route:
 
 - `_essays/why-launch.md` -> `/why-launch/`
 - `_essays/great-product.md` -> `/great-product/`
+
+## Portfolio Wall
+
+The homepage shows portfolio companies as a wall of logos, later stages first.
+Every logo is drawn in the page's ink color, so the wall reads as one set in
+light and dark mode. Each tile shows the company's stage and a short tag, and
+pointing at a tile shows one sentence on the company. It needs no JavaScript.
+
+To add a company:
+
+1. Make sure the company is public: a live website, announced funding, or a
+   listing on Pear's site. Never add check sizes, valuations, ownership, or
+   internal notes. This repository is public.
+2. Add an entry to `_data/portfolio.yml` (the comments at the top list each
+   field).
+3. Add the logo at `static/portfolio/<slug>.png`: the logo from the company's
+   own site, in black on a transparent background, trimmed to its edges, about
+   500px wide (150px tall for a square mark). Details that are white in the
+   original, like a cut-out inside a dark shape, must be transparent.
+4. Set `logo_ratio` to the image's width divided by its height. If the logo
+   looks bigger or smaller than its neighbors, set `logo_scale` (for example
+   `0.9` or `1.1`).
+
+When a company announces a new round, change its `stage`, and update `round`
+with the link behind it in `round_source`. `/#portfolio-<slug>` links to a
+tile.
 
 ## Press Shelf
 

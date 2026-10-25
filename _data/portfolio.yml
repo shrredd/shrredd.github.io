@@ -1,0 +1,251 @@
+# Portfolio companies, shown on the homepage as a wall of logos.
+#
+# Tiles are grouped by stage, later stages first. Within a stage they appear
+# in the order listed here.
+#
+# Only list companies that are publicly announced (a live website, announced
+# funding, or a listing on Pear's site). Never add check sizes, valuations,
+# ownership, or internal notes: this repository and the site are public.
+#
+# - slug: lowercase id; /#portfolio-<slug> links to the tile
+# - name / url: the company's name as it writes it, and its homepage
+# - tag: two or three words on what it does
+# - stage: pre-seed | seed | series-a | series-b (the company's latest
+#   announced round, not Pear's first check)
+# - about: one plain sentence, written for this site from the company's own
+#   site; it shows when you point at the tile
+# - round: optional; the latest announced round, or the investors the company
+#   names itself, from a public source (press, or the company's own site), for
+#   example "$37M Series A led by Lightspeed, 2026". It shows under the sentence.
+#   Never Pear's check size, a valuation, or a round that is not announced.
+# - round_source: the public link behind `round` (kept here, not shown)
+# - logo: mask image in static/portfolio/ (default <slug>.png); see README
+# - logo_ratio: the logo image's width divided by its height
+# - logo_scale: optional size correction (default 1); above 1 for light,
+#   thin logos, below 1 for heavy ones, so all logos look the same size
+
+- slug: piston
+  name: Piston
+  url: https://www.piston.com/
+  tag: Fleet payments
+  stage: series-a
+  about: Cardless fuel payments for fleets, with control over every gallon.
+  round: "$15M Series A led by FPV Ventures, 2026"
+  round_source: https://siliconangle.com/2026/09/10/piston-technologies-raises-15m-to-expand-its-cardless-payments-tech-for-gas-guzzling-truckers/
+  logo_ratio: 2.97
+  logo_scale: 1.04
+
+- slug: andera
+  name: Andera
+  url: https://www.andera.ai/
+  tag: Audit automation
+  stage: series-a
+  about: AI that automates SOX controls testing, so audits take less time and cost less.
+  round: "$37M Series A led by Lightspeed, 2026"
+  round_source: https://lsvp.com/stories/audits-moment-has-arrived-why-we-invested-in-andera/
+  logo_ratio: 4.20
+  logo_scale: 1.08
+
+- slug: nuvo
+  name: Nuvo
+  url: https://nuvo.com/
+  tag: B2B credit
+  stage: series-a
+  about: An AI order-to-cash network for B2B sellers, from onboarding and credit to collections.
+  round: "$34M Series A from Sequoia and Spark Capital, 2025"
+  round_source: https://techcrunch.com/2025/04/30/nuvo-a-network-for-b2b-trade-has-nabbed-34m-from-a-whos-who-list-of-investors
+  logo_ratio: 3.36
+
+- slug: crossmint
+  name: Crossmint
+  url: https://www.crossmint.com/
+  tag: Stablecoin infrastructure
+  stage: series-a
+  about: All-in-one stablecoin infrastructure for companies and AI agents, including wallets and onramps.
+  round: "$23.6M led by Ribbit Capital, 2025"
+  round_source: https://www.crossmint.com/announcement/crossmint-raises-23-6m-led-by-ribbit-capital
+  logo_ratio: 5.33
+
+- slug: pravah
+  name: Pravāh
+  url: https://www.pravah.com/
+  tag: Energy AI
+  stage: seed
+  about: AI agents and machine learning for power systems.
+  logo_ratio: 4.45
+
+- slug: nomadic
+  name: Nomadic
+  url: https://www.nomadicai.com/
+  tag: Physical AI data
+  stage: seed
+  about: Turns video, lidar, and radar from robots and vehicles into data that physical AI can learn from.
+  round: "$8.4M seed led by TQ Ventures, 2026"
+  round_source: https://techcrunch.com/2026/03/31/nomadic-raises-8-4-million-to-wrangle-the-data-pouring-off-avs/
+  logo_ratio: 5.77
+
+- slug: guardowl
+  name: GuardOwl
+  url: https://guardowlco.com/
+  tag: Security ops
+  stage: seed
+  about: An all-in-one platform for physical security teams.
+  round: "$3M led by Tower Research Ventures, 2026"
+  round_source: https://tower-research.com/guard-owl-bringing-transparency-and-automation-to-physical-security
+  logo_ratio: 4.56
+
+- slug: optexity
+  name: Optexity
+  url: https://optexity.com/
+  tag: Workflow automation
+  stage: seed
+  about: Browser agents that connect to any web portal, even one without an API.
+  round: "Raised $4M"
+  round_source: https://optexity.com/
+  logo_ratio: 4.09
+
+- slug: baton
+  name: Baton
+  url: https://www.getbaton.ai/
+  tag: Software implementation
+  stage: seed
+  about: An AI implementation engine that sets up demos, pilots, and live instances of complex software.
+  logo_ratio: 4.04
+  logo_scale: 0.88
+
+- slug: lore
+  name: Lore
+  url: https://lore.link/
+  tag: AI session sharing
+  stage: seed
+  about: A studio of digital products, from an agent workbench to session sharing for Claude Code.
+  logo_ratio: 2.46
+  logo_scale: 0.86
+
+- slug: bridgehealthai
+  name: BridgeHealthAI
+  url: https://bridgehealthequity.com/
+  tag: Medicaid enrollment
+  stage: seed
+  about: Helps community health centers keep their patients covered by Medicaid and protect their revenue.
+  round: "Also backed by Flare Capital"
+  round_source: https://careers.flarecapital.com/companies/bridgehealthai
+  logo_ratio: 7.78
+  logo_scale: 1.05
+
+- slug: elo
+  name: Elo
+  url: https://elo.ad/
+  tag: AI chat ads
+  stage: seed
+  about: An ad network for AI chat apps.
+  round: "Also backed by Audacious Ventures"
+  round_source: https://elo.ad/
+  logo_ratio: 2.31
+  logo_scale: 0.93
+
+- slug: camber
+  name: Camber
+  url: https://www.cambercloud.com/
+  tag: Data science agents
+  stage: seed
+  about: AI agents for data science teams that keep working around the clock.
+  round: "$4M seed led by Base10 Partners, 2025"
+  round_source: https://www.aol.com/startup-says-computing-limits-shouldnt-101926715.html
+  logo_ratio: 6.33
+  logo_scale: 0.95
+
+- slug: meridian
+  name: Meridian
+  url: https://usemeridian.io/
+  tag: Operations AI
+  stage: seed
+  about: Frontier AI for operations in staffing, logistics, manufacturing, and industrial services.
+  round: "Seed from Sunflower Capital, SV Angel, and angels from Anthropic"
+  round_source: https://usemeridian.io/
+  logo_ratio: 3.81
+
+- slug: perseus
+  name: Perseus
+  url: https://www.perseuslabs.io/
+  tag: Secure AI for finance
+  stage: seed
+  about: Secure AI infrastructure built for financial institutions and their teams.
+  round: "Also backed by Felicis, Jump Trading, and Consonant"
+  round_source: https://www.perseuslabs.io/
+  logo_ratio: 4.43
+  logo_scale: 1.04
+
+- slug: truemeter
+  name: TrueMeter
+  url: https://truemeter.com/
+  tag: Utility savings
+  stage: seed
+  about: AI that manages utility bills for multi-location businesses. It audits them, gets lower rates, and pays them.
+  round: "$4M seed led by Ulu Ventures, 2025"
+  round_source: https://pulse2.com/truemeter-4-million-seed-funding-raised-for-expanding-ai-energy-savings-platform/amp/
+  logo_ratio: 5.94
+  logo_scale: 1.13
+
+- slug: truth-systems
+  name: Truth Systems
+  url: https://www.truthsystems.ai/
+  tag: AI governance
+  stage: seed
+  about: A governance layer that applies a law firm's policies, client rules, and ethical walls to AI tools before they act.
+  round: "$4M seed led by Gradient, 2025"
+  round_source: https://www.artificiallawyer.com/2025/10/28/truth-systems-bags-4m-to-enforce-ai-guardrails/
+  logo_ratio: 7.50
+  logo_scale: 1.04
+
+- slug: polynomic
+  name: Polynomic
+  url: https://polynomic.ai/
+  tag: AI ad agency
+  stage: seed
+  about: A full-service AI ad agency for e-commerce brands that earns a share of the extra revenue it brings in.
+  logo_ratio: 5.66
+  logo_scale: 1.08
+
+- slug: triangle-analytics
+  name: Triangle Analytics
+  url: https://triangleanalytics.com/
+  tag: Behavioral prediction
+  stage: seed
+  about: Predicts how individual people will respond, for decisions where being wrong is not an option.
+  logo_ratio: 7.58
+  logo_scale: 1.15
+
+- slug: blueberry
+  name: Blueberry
+  url: https://blueberry.ai/
+  tag: AI marketing
+  stage: seed
+  about: AI agents that turn social interactions into revenue, email signups, and customer loyalty for B2C brands.
+  logo_ratio: 5.86
+  logo_scale: 1.03
+
+- slug: vallo
+  name: Vallo
+  url: https://www.vallo.dev/
+  tag: Agent infrastructure
+  stage: pre-seed
+  about: Infrastructure for background agent systems, now in private beta.
+  logo_ratio: 4.66
+
+- slug: sparse-labs
+  name: Sparse Labs
+  url: https://www.sparselabs.ai/
+  tag: Robot vision
+  stage: pre-seed
+  about: The layer between a robot's cameras and its model that keeps only what the task needs.
+  logo_ratio: 9.03
+  logo_scale: 0.94
+
+- slug: infi-robotics
+  name: Infi Robotics
+  url: https://infirobotics.com/
+  tag: Robotic manufacturing
+  stage: pre-seed
+  about: A robotics-native contract manufacturer that takes hardware from prototype to production.
+  logo_ratio: 9.49
