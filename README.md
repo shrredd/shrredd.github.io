@@ -80,6 +80,28 @@ When a company announces a new round, change its `stage`, and update `round`
 with the link behind it in `round_source`. `/#portfolio-<slug>` links to a
 tile.
 
+## Link Preview Video
+
+When someone texts the homepage link, iMessage plays a short video in the
+preview: the press books flip over one by one to show the portfolio logos,
+then flip back. Apps that show no video use a still from the same scene.
+
+- `og/home.html` (published at `/og/home/`, not indexed) is the animation. It
+  reads `_data/press.yml` and `_data/portfolio.yml`.
+- `_og/render.js` turns it into `static/og/home.mp4` and `static/og/home.jpg`.
+- The `og:video` and `og:image` tags in `index.html` point to those files.
+
+After you add a company or a press book, render again (with the Jekyll preview
+running, from the repo root):
+
+```bash
+npm i --prefix /tmp/og-tools playwright-core ffmpeg-static
+NODE_PATH=/tmp/og-tools/node_modules node _og/render.js
+```
+
+Apps cache link previews by URL, so a changed video can take a while to show.
+To force it, give the files new names and update the tags.
+
 ## Press Shelf
 
 The homepage shows press coverage as a stack of books. Each book opens into a
