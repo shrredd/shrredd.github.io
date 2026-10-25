@@ -23,7 +23,7 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:title" content="{{ page.meta_title | default: page.title | append: ' - Shravan Reddy' | escape }}">
   <meta property="og:description" content="{{ page.description | escape }}">
-  <meta property="og:image" content="{{ site.url }}{{ page.og_image | default: '/static/shravan-headshot-520.jpg' }}">
+  <meta property="og:image" content="{{ site.url }}{{ page.og_image | default: '/static/shravan-headshot-520.jpg?v=20261024c' }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="{{ page.title | escape }} - Shravan Reddy">
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.meta_title | default: page.title | append: ' - Shravan Reddy' | escape }}">
   <meta name="twitter:description" content="{{ page.twitter_description | default: page.description | escape }}">
-  <meta name="twitter:image" content="{{ site.url }}{{ page.og_image | default: '/static/shravan-headshot-520.jpg' }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ page.og_image | default: '/static/shravan-headshot-520.jpg?v=20261024c' }}">
   <meta name="twitter:image:alt" content="{{ page.title | escape }} - Shravan Reddy">
   {% include analytics.html %}
 
@@ -88,7 +88,7 @@
 
     <main id="content">
       <div class="article-header">
-        {% if page.byline %}<p class="byline"><img class="byline-avatar" src="{{ '/static/shravan-headshot-260.jpg' | relative_url }}" alt="Shravan Reddy" width="20" height="20" decoding="async">{{ page.byline }}</p>{% endif %}
+        {% if page.byline %}<p class="byline"><img class="byline-avatar" src="{{ '/static/shravan-headshot-260.jpg?v=20261024c' | relative_url }}" alt="Shravan Reddy" width="20" height="20" decoding="async">{{ page.byline }}</p>{% endif %}
         <h1>{{ page.title }}</h1>
         {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
       </div>
